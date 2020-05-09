@@ -3698,7 +3698,7 @@ Boolean = True) As String
         End If
     End Sub
 
-    Private Sub Label47_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label47.Click
+    Private Sub Label47_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         Dim picBox As New PictureBox
         Dim btnmsg As String
         picBox = PictureBox1
@@ -5403,5 +5403,9 @@ Boolean = True) As String
 
     Private Sub UpdatePath_TextChanged(sender As Object, e As EventArgs) Handles updatePath.TextChanged
 
+    End Sub
+
+    Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
+        Application.Exit()
     End Sub
 End Class
