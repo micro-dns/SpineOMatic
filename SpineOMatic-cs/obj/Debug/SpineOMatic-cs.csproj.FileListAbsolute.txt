@@ -1,0 +1,12 @@
+C:\Git\SpineOMatic\SpineOMatic-cs\bin\Debug\SpineOMatic-cs.exe.config
+C:\Git\SpineOMatic\SpineOMatic-cs\bin\Debug\SpineOMatic-cs.exe
+C:\Git\SpineOMatic\SpineOMatic-cs\bin\Debug\SpineOMatic-cs.pdb
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic-cs.csprojAssemblyReference.cache
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic_cs.Properties.Resources.resources
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic-cs.csproj.GenerateResource.cache
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic-cs.csproj.CoreCompileInputs.cache
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic-cs.exe
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic-cs.pdb
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic_cs.FormAbout.resources
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic_cs.FormMain.resources
+C:\Git\SpineOMatic\SpineOMatic-cs\obj\Debug\SpineOMatic_cs.FormOptions.resources

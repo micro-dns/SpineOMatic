@@ -27,6 +27,7 @@ The User's Manual can also be downloaded and viewed from SpineOMatic's "About" b
 
 DNS v.8.1
 * Moved changelog to README.md
+* Created CSharp project with UI. Renamed projects to SpineOMatic-cs and SpineOMatic-vb.
 ___
 
 v. 8.0: Major release
