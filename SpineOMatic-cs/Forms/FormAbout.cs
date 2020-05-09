@@ -15,6 +15,8 @@ namespace SpineOMatic_cs
         public FormAbout()
         {
             InitializeComponent();
+            TitleLabel.Text = Program.PROGRAM_NAME + " v" + Program.PROGRAM_VER;
+            DescriptionLabel.Text = Program.ABOUT_DESCRIPTION;
         }
 
         private void FormAbout_Click(object sender, EventArgs e)
@@ -34,6 +36,16 @@ namespace SpineOMatic_cs
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
+        {
+            FormAbout_Click(sender, e);
+        }
+
+        private void DescriptionLabel_Click(object sender, EventArgs e)
+        {
+            FormAbout_Click(sender, e);
         }
     }
 }

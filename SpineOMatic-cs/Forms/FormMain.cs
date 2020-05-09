@@ -56,5 +56,21 @@ namespace SpineOMatic_cs
         {
             this.SearchBox.Focus();
         }
+
+        //literally copypasta'd from
+        //https://stackoverflow.com/questions/1226726/how-do-i-capture-the-enter-key-in-a-windows-forms-combobox
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((this.ActiveControl == this.SearchBox) && (keyData == Keys.Return))
+            {
+                String fixedBarcode = this.SearchBox.Text.Trim().Replace("+", "%2B");
+                Util.Lookup.callAlma(fixedBarcode);
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
     }
 }
