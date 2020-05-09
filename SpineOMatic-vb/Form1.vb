@@ -1,8 +1,8 @@
 Imports System.IO
 Imports System.Management
 Imports System.Drawing.Drawing2D
-Imports System.Drawing.imaging
-Imports System.Drawing.printing
+Imports System.Drawing.Imaging
+Imports System.Drawing.Printing
 Imports System.Threading
 Imports System.Globalization
 Imports System.Runtime.InteropServices
