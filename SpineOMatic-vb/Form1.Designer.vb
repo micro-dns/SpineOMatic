@@ -444,11 +444,13 @@ Partial Class Form1
         Me.CreateTempLbl = New System.Windows.Forms.Label()
         Me.CheckForUpdates = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label47 = New System.Windows.Forms.Label()
         Me.usrname = New System.Windows.Forms.TextBox()
         Me.lblStation = New System.Windows.Forms.Label()
         Me.station = New System.Windows.Forms.TextBox()
         Me.LabelRepeat = New System.Windows.Forms.NumericUpDown()
         Me.lblXMLWarn = New System.Windows.Forms.Label()
+        Me.lblToggleAdmin = New System.Windows.Forms.Label()
         Me.unitCM = New System.Windows.Forms.RadioButton()
         Me.unitINCH = New System.Windows.Forms.RadioButton()
         Me.decimalCOMMA = New System.Windows.Forms.RadioButton()
@@ -479,11 +481,6 @@ Partial Class Form1
         Me.XBOX = New System.Windows.Forms.ListBox()
         Me.holdingsBy = New System.Windows.Forms.Label()
         Me.accessType = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.lblToggleAdmin = New System.Windows.Forms.Label()
-        Me.SpineOMaticToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -536,33 +533,29 @@ Partial Class Form1
         Me.Panel18.SuspendLayout()
         Me.Panel19.SuspendLayout()
         Me.xboxPanel.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'OutputBox
         '
-        Me.OutputBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.OutputBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.OutputBox.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OutputBox.Location = New System.Drawing.Point(0, 200)
+        Me.OutputBox.Location = New System.Drawing.Point(0, 188)
         Me.OutputBox.Multiline = True
         Me.OutputBox.Name = "OutputBox"
         Me.OutputBox.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.OutputBox.Size = New System.Drawing.Size(216, 270)
+        Me.OutputBox.Size = New System.Drawing.Size(216, 192)
         Me.OutputBox.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.OutputBox, "Output Box where the spine label can be displayed or edited.")
         '
         'ManualPrint
         '
-        Me.ManualPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ManualPrint.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ManualPrint.Location = New System.Drawing.Point(4, 474)
+        Me.ManualPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ManualPrint.Location = New System.Drawing.Point(4, 384)
         Me.ManualPrint.Margin = New System.Windows.Forms.Padding(0)
         Me.ManualPrint.Name = "ManualPrint"
         Me.ManualPrint.Size = New System.Drawing.Size(152, 24)
         Me.ManualPrint.TabIndex = 1
-        Me.ManualPrint.Text = "Print"
+        Me.ManualPrint.Text = "Send to Desktop printer"
         Me.ToolTip1.SetToolTip(Me.ManualPrint, "Print label on selected printer")
         Me.ManualPrint.UseVisualStyleBackColor = True
         '
@@ -570,7 +563,7 @@ Partial Class Form1
         '
         Me.Panel1.Controls.Add(Me.ReviewBox)
         Me.Panel1.Controls.Add(Me.AutoPrintBox)
-        Me.Panel1.Location = New System.Drawing.Point(16, 44)
+        Me.Panel1.Location = New System.Drawing.Point(16, 20)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(176, 24)
         Me.Panel1.TabIndex = 2
@@ -605,20 +598,16 @@ Partial Class Form1
         '
         'TabControl1
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(220, 52)
+        Me.TabControl1.Location = New System.Drawing.Point(220, 28)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(604, 422)
+        Me.TabControl1.Size = New System.Drawing.Size(536, 356)
         Me.TabControl1.TabIndex = 3
         '
         'TabPage1
@@ -644,16 +633,15 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.DesktopGroup)
         Me.TabPage1.Controls.Add(Me.Label15)
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(528, 364)
+        Me.TabPage1.Size = New System.Drawing.Size(528, 330)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Print Setup"
         '
         'viaDOSPanel
         '
-        Me.viaDOSPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.viaDOSPanel.Controls.Add(Me.viadosCaution)
         Me.viaDOSPanel.Controls.Add(Me.Panel17)
         Me.viaDOSPanel.Controls.Add(Me.Label120)
@@ -954,7 +942,6 @@ Partial Class Form1
         '
         'useDOSBatch
         '
-        Me.useDOSBatch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.useDOSBatch.AutoSize = True
         Me.useDOSBatch.ForeColor = System.Drawing.Color.Gray
         Me.useDOSBatch.Location = New System.Drawing.Point(420, 304)
@@ -1004,7 +991,6 @@ Partial Class Form1
         '
         'orientationPanel
         '
-        Me.orientationPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.orientationPanel.Controls.Add(Me.usePortrait)
         Me.orientationPanel.Controls.Add(Me.useLandscape)
         Me.orientationPanel.Location = New System.Drawing.Point(412, 136)
@@ -1042,7 +1028,6 @@ Partial Class Form1
         '
         'marginPanel
         '
-        Me.marginPanel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.marginPanel.Controls.Add(Me.inUnits1)
         Me.marginPanel.Controls.Add(Me.Label4)
         Me.marginPanel.Controls.Add(Me.inTopMargin)
@@ -1157,7 +1142,6 @@ Partial Class Form1
         '
         'inMaxLines
         '
-        Me.inMaxLines.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inMaxLines.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inMaxLines.Location = New System.Drawing.Point(488, 212)
         Me.inMaxLines.Name = "inMaxLines"
@@ -1170,7 +1154,6 @@ Partial Class Form1
         '
         'inMaxChars
         '
-        Me.inMaxChars.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inMaxChars.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inMaxChars.Location = New System.Drawing.Point(488, 232)
         Me.inMaxChars.Name = "inMaxChars"
@@ -1196,7 +1179,6 @@ Partial Class Form1
         '
         'Label24
         '
-        Me.Label24.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.Location = New System.Drawing.Point(412, 192)
@@ -1207,7 +1189,6 @@ Partial Class Form1
         '
         'Label25
         '
-        Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.Location = New System.Drawing.Point(412, 232)
@@ -1530,9 +1511,6 @@ Partial Class Form1
         '
         'DesktopGroup
         '
-        Me.DesktopGroup.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DesktopGroup.Controls.Add(Me.Label12)
         Me.DesktopGroup.Controls.Add(Me.btnBCFontDialog)
         Me.DesktopGroup.Controls.Add(Me.inBCFontWeight)
@@ -1552,7 +1530,7 @@ Partial Class Form1
         Me.DesktopGroup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DesktopGroup.Location = New System.Drawing.Point(32, 40)
         Me.DesktopGroup.Name = "DesktopGroup"
-        Me.DesktopGroup.Size = New System.Drawing.Size(376, 304)
+        Me.DesktopGroup.Size = New System.Drawing.Size(376, 284)
         Me.DesktopGroup.TabIndex = 11
         Me.DesktopGroup.TabStop = False
         '
@@ -1568,7 +1546,6 @@ Partial Class Form1
         '
         'btnBCFontDialog
         '
-        Me.btnBCFontDialog.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBCFontDialog.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnBCFontDialog.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBCFontDialog.Location = New System.Drawing.Point(344, 56)
@@ -1581,7 +1558,6 @@ Partial Class Form1
         '
         'inBCFontWeight
         '
-        Me.inBCFontWeight.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inBCFontWeight.AutoSize = True
         Me.inBCFontWeight.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inBCFontWeight.Location = New System.Drawing.Point(292, 60)
@@ -1594,7 +1570,6 @@ Partial Class Form1
         '
         'Label29
         '
-        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.Location = New System.Drawing.Point(220, 60)
@@ -1605,7 +1580,6 @@ Partial Class Form1
         '
         'inBCFontSize
         '
-        Me.inBCFontSize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inBCFontSize.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inBCFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inBCFontSize.Location = New System.Drawing.Point(256, 60)
@@ -1617,8 +1591,6 @@ Partial Class Form1
         '
         'inBCFontName
         '
-        Me.inBCFontName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inBCFontName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inBCFontName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inBCFontName.Location = New System.Drawing.Point(76, 60)
@@ -1630,9 +1602,6 @@ Partial Class Form1
         '
         'SheetSettings
         '
-        Me.SheetSettings.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SheetSettings.Controls.Add(Me.Label121)
         Me.SheetSettings.Controls.Add(Me.inUnits2)
         Me.SheetSettings.Controls.Add(Me.Label11)
@@ -1662,7 +1631,7 @@ Partial Class Form1
         Me.SheetSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SheetSettings.Location = New System.Drawing.Point(4, 88)
         Me.SheetSettings.Name = "SheetSettings"
-        Me.SheetSettings.Size = New System.Drawing.Size(368, 212)
+        Me.SheetSettings.Size = New System.Drawing.Size(368, 192)
         Me.SheetSettings.TabIndex = 15
         Me.SheetSettings.Visible = False
         '
@@ -1779,9 +1748,6 @@ Partial Class Form1
         '
         'batchPreview
         '
-        Me.batchPreview.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.batchPreview.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.batchPreview.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.batchPreview.Location = New System.Drawing.Point(204, 60)
@@ -1789,7 +1755,7 @@ Partial Class Form1
         Me.batchPreview.Name = "batchPreview"
         Me.batchPreview.ReadOnly = True
         Me.batchPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.batchPreview.Size = New System.Drawing.Size(164, 152)
+        Me.batchPreview.Size = New System.Drawing.Size(164, 132)
         Me.batchPreview.TabIndex = 25
         Me.ToolTip1.SetToolTip(Me.batchPreview, "A list of all labels currently in the selected batch")
         Me.batchPreview.WordWrap = False
@@ -1962,7 +1928,6 @@ Partial Class Form1
         '
         'inFontWeight
         '
-        Me.inFontWeight.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inFontWeight.AutoSize = True
         Me.inFontWeight.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inFontWeight.Location = New System.Drawing.Point(292, 40)
@@ -1975,7 +1940,6 @@ Partial Class Form1
         '
         'Label23
         '
-        Me.Label23.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.Location = New System.Drawing.Point(220, 40)
@@ -1986,7 +1950,6 @@ Partial Class Form1
         '
         'inFontSize
         '
-        Me.inFontSize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inFontSize.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inFontSize.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inFontSize.Location = New System.Drawing.Point(256, 40)
@@ -1998,7 +1961,6 @@ Partial Class Form1
         '
         'FontDialogButn
         '
-        Me.FontDialogButn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FontDialogButn.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.FontDialogButn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FontDialogButn.Location = New System.Drawing.Point(344, 36)
@@ -2012,8 +1974,6 @@ Partial Class Form1
         '
         'inFontName
         '
-        Me.inFontName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inFontName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inFontName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inFontName.Location = New System.Drawing.Point(76, 40)
@@ -2035,7 +1995,6 @@ Partial Class Form1
         '
         'PrinterDialogButn
         '
-        Me.PrinterDialogButn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PrinterDialogButn.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.PrinterDialogButn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PrinterDialogButn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2052,8 +2011,6 @@ Partial Class Form1
         '
         'inPrinterName
         '
-        Me.inPrinterName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.inPrinterName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.inPrinterName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.inPrinterName.Location = New System.Drawing.Point(76, 20)
@@ -2075,7 +2032,6 @@ Partial Class Form1
         '
         'Label15
         '
-        Me.Label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(412, 212)
@@ -2107,19 +2063,16 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.formatInfoPanel)
         Me.TabPage2.Controls.Add(Me.spineDefaults)
         Me.TabPage2.Controls.Add(Me.pocketDefaults)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(596, 392)
+        Me.TabPage2.Size = New System.Drawing.Size(528, 330)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Tag = ""
         Me.TabPage2.Text = "Call Number Format"
         '
         'PocketLabelPanel
         '
-        Me.PocketLabelPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PocketLabelPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.PocketLabelPanel.Controls.Add(Me.plUnits2)
         Me.PocketLabelPanel.Controls.Add(Me.plUnits1)
@@ -2146,9 +2099,9 @@ Partial Class Form1
         Me.PocketLabelPanel.Controls.Add(Me.btnPlCustom)
         Me.PocketLabelPanel.Controls.Add(Me.plOutput)
         Me.PocketLabelPanel.Controls.Add(Me.Label88)
-        Me.PocketLabelPanel.Location = New System.Drawing.Point(4, 6)
+        Me.PocketLabelPanel.Location = New System.Drawing.Point(4, -8)
         Me.PocketLabelPanel.Name = "PocketLabelPanel"
-        Me.PocketLabelPanel.Size = New System.Drawing.Size(589, 378)
+        Me.PocketLabelPanel.Size = New System.Drawing.Size(512, 316)
         Me.PocketLabelPanel.TabIndex = 60
         Me.PocketLabelPanel.Visible = False
         '
@@ -2176,9 +2129,6 @@ Partial Class Form1
         '
         'userDefinedPanel
         '
-        Me.userDefinedPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.userDefinedPanel.Controls.Add(Me.Label96)
         Me.userDefinedPanel.Controls.Add(Me.plMax4)
         Me.userDefinedPanel.Controls.Add(Me.plMax3)
@@ -2197,27 +2147,24 @@ Partial Class Form1
         Me.userDefinedPanel.Controls.Add(Me.plSrc1)
         Me.userDefinedPanel.Location = New System.Drawing.Point(264, 184)
         Me.userDefinedPanel.Name = "userDefinedPanel"
-        Me.userDefinedPanel.Size = New System.Drawing.Size(321, 194)
+        Me.userDefinedPanel.Size = New System.Drawing.Size(244, 112)
         Me.userDefinedPanel.TabIndex = 78
         '
         'Label96
         '
-        Me.Label96.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label96.AutoSize = True
-        Me.Label96.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label96.Location = New System.Drawing.Point(177, 2)
+        Me.Label96.Location = New System.Drawing.Point(100, 2)
         Me.Label96.Name = "Label96"
-        Me.Label96.Size = New System.Drawing.Size(97, 15)
+        Me.Label96.Size = New System.Drawing.Size(83, 13)
         Me.Label96.TabIndex = 53
         Me.Label96.Text = "Number of lines:"
         '
         'plMax4
         '
-        Me.plMax4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMax4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMax4.Location = New System.Drawing.Point(293, 90)
+        Me.plMax4.Location = New System.Drawing.Point(216, 90)
         Me.plMax4.Name = "plMax4"
-        Me.plMax4.Size = New System.Drawing.Size(20, 25)
+        Me.plMax4.Size = New System.Drawing.Size(20, 20)
         Me.plMax4.TabIndex = 51
         Me.plMax4.Tag = "text_plmax4"
         Me.plMax4.Text = "0"
@@ -2225,11 +2172,10 @@ Partial Class Form1
         '
         'plMax3
         '
-        Me.plMax3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMax3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMax3.Location = New System.Drawing.Point(293, 66)
+        Me.plMax3.Location = New System.Drawing.Point(216, 66)
         Me.plMax3.Name = "plMax3"
-        Me.plMax3.Size = New System.Drawing.Size(20, 25)
+        Me.plMax3.Size = New System.Drawing.Size(20, 20)
         Me.plMax3.TabIndex = 44
         Me.plMax3.Tag = "text_plmax3"
         Me.plMax3.Text = "0"
@@ -2237,11 +2183,10 @@ Partial Class Form1
         '
         'plMax2
         '
-        Me.plMax2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMax2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMax2.Location = New System.Drawing.Point(293, 42)
+        Me.plMax2.Location = New System.Drawing.Point(216, 42)
         Me.plMax2.Name = "plMax2"
-        Me.plMax2.Size = New System.Drawing.Size(20, 25)
+        Me.plMax2.Size = New System.Drawing.Size(20, 20)
         Me.plMax2.TabIndex = 41
         Me.plMax2.Tag = "text_plmax2"
         Me.plMax2.Text = "0"
@@ -2249,11 +2194,10 @@ Partial Class Form1
         '
         'plMax1
         '
-        Me.plMax1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMax1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMax1.Location = New System.Drawing.Point(293, 18)
+        Me.plMax1.Location = New System.Drawing.Point(216, 18)
         Me.plMax1.Name = "plMax1"
-        Me.plMax1.Size = New System.Drawing.Size(20, 25)
+        Me.plMax1.Size = New System.Drawing.Size(20, 20)
         Me.plMax1.TabIndex = 38
         Me.plMax1.Tag = "text_plmax1"
         Me.plMax1.Text = "0"
@@ -2261,22 +2205,19 @@ Partial Class Form1
         '
         'Label95
         '
-        Me.Label95.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label95.AutoSize = True
-        Me.Label95.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label95.Location = New System.Drawing.Point(289, 2)
+        Me.Label95.Location = New System.Drawing.Point(212, 2)
         Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(34, 15)
+        Me.Label95.Size = New System.Drawing.Size(29, 13)
         Me.Label95.TabIndex = 48
         Me.Label95.Text = "max."
         '
         'plMin4
         '
-        Me.plMin4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMin4.Location = New System.Drawing.Point(265, 90)
+        Me.plMin4.Location = New System.Drawing.Point(188, 90)
         Me.plMin4.Name = "plMin4"
-        Me.plMin4.Size = New System.Drawing.Size(20, 25)
+        Me.plMin4.Size = New System.Drawing.Size(20, 20)
         Me.plMin4.TabIndex = 50
         Me.plMin4.Tag = "text_plmin4"
         Me.plMin4.Text = "0"
@@ -2284,11 +2225,10 @@ Partial Class Form1
         '
         'plMin3
         '
-        Me.plMin3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMin3.Location = New System.Drawing.Point(265, 66)
+        Me.plMin3.Location = New System.Drawing.Point(188, 66)
         Me.plMin3.Name = "plMin3"
-        Me.plMin3.Size = New System.Drawing.Size(20, 25)
+        Me.plMin3.Size = New System.Drawing.Size(20, 20)
         Me.plMin3.TabIndex = 43
         Me.plMin3.Tag = "text_plmin3"
         Me.plMin3.Text = "0"
@@ -2296,11 +2236,10 @@ Partial Class Form1
         '
         'plMin2
         '
-        Me.plMin2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMin2.Location = New System.Drawing.Point(265, 42)
+        Me.plMin2.Location = New System.Drawing.Point(188, 42)
         Me.plMin2.Name = "plMin2"
-        Me.plMin2.Size = New System.Drawing.Size(20, 25)
+        Me.plMin2.Size = New System.Drawing.Size(20, 20)
         Me.plMin2.TabIndex = 40
         Me.plMin2.Tag = "text_plmin2"
         Me.plMin2.Text = "0"
@@ -2308,11 +2247,10 @@ Partial Class Form1
         '
         'plMin1
         '
-        Me.plMin1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plMin1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.plMin1.Location = New System.Drawing.Point(265, 18)
+        Me.plMin1.Location = New System.Drawing.Point(188, 18)
         Me.plMin1.Name = "plMin1"
-        Me.plMin1.Size = New System.Drawing.Size(20, 25)
+        Me.plMin1.Size = New System.Drawing.Size(20, 20)
         Me.plMin1.TabIndex = 37
         Me.plMin1.Tag = "text_plmin1"
         Me.plMin1.Text = "0"
@@ -2321,33 +2259,28 @@ Partial Class Form1
         'Label93
         '
         Me.Label93.AutoSize = True
-        Me.Label93.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Label93.Location = New System.Drawing.Point(8, 2)
         Me.Label93.Name = "Label93"
-        Me.Label93.Size = New System.Drawing.Size(81, 15)
+        Me.Label93.Size = New System.Drawing.Size(71, 13)
         Me.Label93.TabIndex = 41
         Me.Label93.Text = "XML Sources"
         '
         'Label92
         '
-        Me.Label92.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label92.AutoSize = True
-        Me.Label92.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label92.Location = New System.Drawing.Point(262, 2)
+        Me.Label92.Location = New System.Drawing.Point(185, 2)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(31, 15)
+        Me.Label92.Size = New System.Drawing.Size(26, 13)
         Me.Label92.TabIndex = 40
         Me.Label92.Text = "min."
         '
         'plSrc4
         '
-        Me.plSrc4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plSrc4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plSrc4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.plSrc4.Location = New System.Drawing.Point(8, 90)
         Me.plSrc4.Name = "plSrc4"
-        Me.plSrc4.Size = New System.Drawing.Size(249, 20)
+        Me.plSrc4.Size = New System.Drawing.Size(172, 20)
         Me.plSrc4.TabIndex = 45
         Me.plSrc4.Tag = "text_plsource4"
         Me.ToolTip1.SetToolTip(Me.plSrc4, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
@@ -2355,13 +2288,11 @@ Partial Class Form1
         '
         'plSrc3
         '
-        Me.plSrc3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plSrc3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plSrc3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.plSrc3.Location = New System.Drawing.Point(8, 66)
         Me.plSrc3.Name = "plSrc3"
-        Me.plSrc3.Size = New System.Drawing.Size(249, 20)
+        Me.plSrc3.Size = New System.Drawing.Size(172, 20)
         Me.plSrc3.TabIndex = 42
         Me.plSrc3.Tag = "text_plsource3"
         Me.ToolTip1.SetToolTip(Me.plSrc3, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
@@ -2369,13 +2300,11 @@ Partial Class Form1
         '
         'plSrc2
         '
-        Me.plSrc2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plSrc2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plSrc2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.plSrc2.Location = New System.Drawing.Point(8, 42)
         Me.plSrc2.Name = "plSrc2"
-        Me.plSrc2.Size = New System.Drawing.Size(249, 20)
+        Me.plSrc2.Size = New System.Drawing.Size(172, 20)
         Me.plSrc2.TabIndex = 39
         Me.plSrc2.Tag = "text_plsource2"
         Me.ToolTip1.SetToolTip(Me.plSrc2, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
@@ -2383,13 +2312,11 @@ Partial Class Form1
         '
         'plSrc1
         '
-        Me.plSrc1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.plSrc1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plSrc1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.plSrc1.Location = New System.Drawing.Point(8, 18)
         Me.plSrc1.Name = "plSrc1"
-        Me.plSrc1.Size = New System.Drawing.Size(249, 20)
+        Me.plSrc1.Size = New System.Drawing.Size(172, 20)
         Me.plSrc1.TabIndex = 36
         Me.plSrc1.Tag = "text_plsource1"
         Me.ToolTip1.SetToolTip(Me.plSrc1, "Enter an XML field to include on the pocket label, or doubleclick to select an XM" &
@@ -2508,7 +2435,6 @@ Partial Class Form1
         '
         'Label103
         '
-        Me.Label103.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Label103.Location = New System.Drawing.Point(60, 84)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(140, 20)
@@ -2518,10 +2444,9 @@ Partial Class Form1
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Label102.Location = New System.Drawing.Point(16, 48)
         Me.Label102.Name = "Label102"
-        Me.Label102.Size = New System.Drawing.Size(215, 15)
+        Me.Label102.Size = New System.Drawing.Size(186, 13)
         Me.Label102.TabIndex = 66
         Me.Label102.Text = "Pocket label distance from left margin:"
         '
@@ -2530,7 +2455,7 @@ Partial Class Form1
         Me.plLeftMargin.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.plLeftMargin.Location = New System.Drawing.Point(204, 48)
         Me.plLeftMargin.Name = "plLeftMargin"
-        Me.plLeftMargin.Size = New System.Drawing.Size(36, 18)
+        Me.plLeftMargin.Size = New System.Drawing.Size(36, 13)
         Me.plLeftMargin.TabIndex = 65
         Me.plLeftMargin.Tag = "text_plLeftmargin"
         Me.plLeftMargin.Text = "1.2"
@@ -2559,7 +2484,7 @@ Partial Class Form1
         Me.plDistance.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.plDistance.Location = New System.Drawing.Point(204, 84)
         Me.plDistance.Name = "plDistance"
-        Me.plDistance.Size = New System.Drawing.Size(36, 18)
+        Me.plDistance.Size = New System.Drawing.Size(36, 13)
         Me.plDistance.TabIndex = 61
         Me.plDistance.Tag = "text_pldistance"
         Me.plDistance.Text = "0.0"
@@ -2567,7 +2492,6 @@ Partial Class Form1
         '
         'Label99
         '
-        Me.Label99.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.Label99.Location = New System.Drawing.Point(16, 68)
         Me.Label99.Name = "Label99"
         Me.Label99.Size = New System.Drawing.Size(116, 20)
@@ -2619,14 +2543,12 @@ Partial Class Form1
         '
         'plOutput
         '
-        Me.plOutput.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.plOutput.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.plOutput.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.plOutput.Location = New System.Drawing.Point(0, 108)
         Me.plOutput.Multiline = True
         Me.plOutput.Name = "plOutput"
-        Me.plOutput.Size = New System.Drawing.Size(256, 269)
+        Me.plOutput.Size = New System.Drawing.Size(256, 188)
         Me.plOutput.TabIndex = 31
         Me.plOutput.TabStop = False
         Me.ToolTip1.SetToolTip(Me.plOutput, "Output box where the pocket label can be displayed or edited.")
@@ -2635,10 +2557,10 @@ Partial Class Form1
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label88.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label88.Location = New System.Drawing.Point(4, 4)
         Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(115, 17)
+        Me.Label88.Size = New System.Drawing.Size(134, 16)
         Me.Label88.TabIndex = 30
         Me.Label88.Text = "Pocket Label Sets"
         '
@@ -2707,10 +2629,10 @@ Partial Class Form1
         Me.TabPage7.Controls.Add(Me.lcNumericBreak)
         Me.TabPage7.Controls.Add(Me.lcNoNumericBreak)
         Me.TabPage7.Controls.Add(Me.Label66)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(496, 174)
+        Me.TabPage7.Size = New System.Drawing.Size(496, 178)
         Me.TabPage7.TabIndex = 0
         Me.TabPage7.Text = "LC/Child.Lit/NLM"
         '
@@ -2719,7 +2641,7 @@ Partial Class Form1
         Me.hideCutterDecimal.AutoSize = True
         Me.hideCutterDecimal.Location = New System.Drawing.Point(324, 72)
         Me.hideCutterDecimal.Name = "hideCutterDecimal"
-        Me.hideCutterDecimal.Size = New System.Drawing.Size(145, 21)
+        Me.hideCutterDecimal.Size = New System.Drawing.Size(117, 17)
         Me.hideCutterDecimal.TabIndex = 26
         Me.hideCutterDecimal.Tag = "check_hidecutterdecimal"
         Me.hideCutterDecimal.Text = "Hide cutter decimal"
@@ -2746,7 +2668,7 @@ Partial Class Form1
         Me.Label107.ForeColor = System.Drawing.Color.Blue
         Me.Label107.Location = New System.Drawing.Point(20, 4)
         Me.Label107.Name = "Label107"
-        Me.Label107.Size = New System.Drawing.Size(189, 17)
+        Me.Label107.Size = New System.Drawing.Size(150, 13)
         Me.Label107.TabIndex = 24
         Me.Label107.Text = "Handles Call Number Type(s): "
         '
@@ -2755,7 +2677,7 @@ Partial Class Form1
         Me.lcRemoveAfter.AutoSize = True
         Me.lcRemoveAfter.Location = New System.Drawing.Point(200, 140)
         Me.lcRemoveAfter.Name = "lcRemoveAfter"
-        Me.lcRemoveAfter.Size = New System.Drawing.Size(258, 21)
+        Me.lcRemoveAfter.Size = New System.Drawing.Size(205, 17)
         Me.lcRemoveAfter.TabIndex = 23
         Me.lcRemoveAfter.Tag = "check_lcremoveafter"
         Me.lcRemoveAfter.Text = "Remove character(s) from call number"
@@ -2790,7 +2712,7 @@ Partial Class Form1
         Me.lcOtherBreakAft.AutoSize = True
         Me.lcOtherBreakAft.Location = New System.Drawing.Point(260, 4)
         Me.lcOtherBreakAft.Name = "lcOtherBreakAft"
-        Me.lcOtherBreakAft.Size = New System.Drawing.Size(131, 21)
+        Me.lcOtherBreakAft.Size = New System.Drawing.Size(108, 17)
         Me.lcOtherBreakAft.TabIndex = 14
         Me.lcOtherBreakAft.Tag = "radio_lcotherbreakaft"
         Me.lcOtherBreakAft.Text = "after character(s):"
@@ -2811,7 +2733,7 @@ Partial Class Form1
         Me.lcOtherBreakB4.AutoSize = True
         Me.lcOtherBreakB4.Location = New System.Drawing.Point(164, 4)
         Me.lcOtherBreakB4.Name = "lcOtherBreakB4"
-        Me.lcOtherBreakB4.Size = New System.Drawing.Size(120, 21)
+        Me.lcOtherBreakB4.Size = New System.Drawing.Size(98, 17)
         Me.lcOtherBreakB4.TabIndex = 13
         Me.lcOtherBreakB4.Tag = "radio_lcotherbreakb4"
         Me.lcOtherBreakB4.Text = "Break before or"
@@ -2823,7 +2745,7 @@ Partial Class Form1
         Me.lcOtherNoBreak.Checked = True
         Me.lcOtherNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.lcOtherNoBreak.Name = "lcOtherNoBreak"
-        Me.lcOtherNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.lcOtherNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.lcOtherNoBreak.TabIndex = 12
         Me.lcOtherNoBreak.TabStop = True
         Me.lcOtherNoBreak.Tag = "radio_lcothernobreak"
@@ -2856,7 +2778,7 @@ Partial Class Form1
         Me.lcInCutterBreak.Checked = True
         Me.lcInCutterBreak.Location = New System.Drawing.Point(164, 4)
         Me.lcInCutterBreak.Name = "lcInCutterBreak"
-        Me.lcInCutterBreak.Size = New System.Drawing.Size(164, 21)
+        Me.lcInCutterBreak.Size = New System.Drawing.Size(135, 17)
         Me.lcInCutterBreak.TabIndex = 13
         Me.lcInCutterBreak.TabStop = True
         Me.lcInCutterBreak.Tag = "radio_lccutterspacebreak"
@@ -2868,7 +2790,7 @@ Partial Class Form1
         Me.lcIncutternobreak.AutoSize = True
         Me.lcIncutternobreak.Location = New System.Drawing.Point(88, 4)
         Me.lcIncutternobreak.Name = "lcIncutternobreak"
-        Me.lcIncutternobreak.Size = New System.Drawing.Size(82, 21)
+        Me.lcIncutternobreak.Size = New System.Drawing.Size(69, 17)
         Me.lcIncutternobreak.TabIndex = 12
         Me.lcIncutternobreak.Tag = "radio_lccutterspacenobreak"
         Me.lcIncutternobreak.Text = "No break"
@@ -2900,7 +2822,7 @@ Partial Class Form1
         Me.lcCutterBreak.Checked = True
         Me.lcCutterBreak.Location = New System.Drawing.Point(192, 4)
         Me.lcCutterBreak.Name = "lcCutterBreak"
-        Me.lcCutterBreak.Size = New System.Drawing.Size(143, 21)
+        Me.lcCutterBreak.Size = New System.Drawing.Size(116, 17)
         Me.lcCutterBreak.TabIndex = 13
         Me.lcCutterBreak.TabStop = True
         Me.lcCutterBreak.Tag = "radio_lccutterbreak"
@@ -2912,7 +2834,7 @@ Partial Class Form1
         Me.lcCutterNoBreak.AutoSize = True
         Me.lcCutterNoBreak.Location = New System.Drawing.Point(116, 4)
         Me.lcCutterNoBreak.Name = "lcCutterNoBreak"
-        Me.lcCutterNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.lcCutterNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.lcCutterNoBreak.TabIndex = 12
         Me.lcCutterNoBreak.Tag = "radio_lccutternobreak"
         Me.lcCutterNoBreak.Text = "No break"
@@ -2934,7 +2856,7 @@ Partial Class Form1
         Me.lcDecimalBreakAfter.AutoSize = True
         Me.lcDecimalBreakAfter.Location = New System.Drawing.Point(292, 4)
         Me.lcDecimalBreakAfter.Name = "lcDecimalBreakAfter"
-        Me.lcDecimalBreakAfter.Size = New System.Drawing.Size(104, 21)
+        Me.lcDecimalBreakAfter.Size = New System.Drawing.Size(85, 17)
         Me.lcDecimalBreakAfter.TabIndex = 14
         Me.lcDecimalBreakAfter.Tag = "radio_lcdecbreak"
         Me.lcDecimalBreakAfter.Text = "after decimal"
@@ -2955,7 +2877,7 @@ Partial Class Form1
         Me.lcDecimalBreakB4.AutoSize = True
         Me.lcDecimalBreakB4.Location = New System.Drawing.Point(192, 4)
         Me.lcDecimalBreakB4.Name = "lcDecimalBreakB4"
-        Me.lcDecimalBreakB4.Size = New System.Drawing.Size(120, 21)
+        Me.lcDecimalBreakB4.Size = New System.Drawing.Size(98, 17)
         Me.lcDecimalBreakB4.TabIndex = 13
         Me.lcDecimalBreakB4.Tag = "radio_lcdecbreakbefore"
         Me.lcDecimalBreakB4.Text = "Break before or"
@@ -2967,7 +2889,7 @@ Partial Class Form1
         Me.lcNoDecimalBreak.Checked = True
         Me.lcNoDecimalBreak.Location = New System.Drawing.Point(116, 4)
         Me.lcNoDecimalBreak.Name = "lcNoDecimalBreak"
-        Me.lcNoDecimalBreak.Size = New System.Drawing.Size(82, 21)
+        Me.lcNoDecimalBreak.Size = New System.Drawing.Size(69, 17)
         Me.lcNoDecimalBreak.TabIndex = 12
         Me.lcNoDecimalBreak.TabStop = True
         Me.lcNoDecimalBreak.Tag = "radio_lcdecnobreak"
@@ -2980,7 +2902,7 @@ Partial Class Form1
         Me.lcNumericBreak.Checked = True
         Me.lcNumericBreak.Location = New System.Drawing.Point(200, 28)
         Me.lcNumericBreak.Name = "lcNumericBreak"
-        Me.lcNumericBreak.Size = New System.Drawing.Size(162, 21)
+        Me.lcNumericBreak.Size = New System.Drawing.Size(131, 17)
         Me.lcNumericBreak.TabIndex = 11
         Me.lcNumericBreak.TabStop = True
         Me.lcNumericBreak.Tag = "radio_lcnumbreak"
@@ -2992,7 +2914,7 @@ Partial Class Form1
         Me.lcNoNumericBreak.AutoSize = True
         Me.lcNoNumericBreak.Location = New System.Drawing.Point(124, 28)
         Me.lcNoNumericBreak.Name = "lcNoNumericBreak"
-        Me.lcNoNumericBreak.Size = New System.Drawing.Size(82, 21)
+        Me.lcNoNumericBreak.Size = New System.Drawing.Size(69, 17)
         Me.lcNoNumericBreak.TabIndex = 10
         Me.lcNoNumericBreak.Tag = "radio_lcnumnobreak"
         Me.lcNoNumericBreak.Text = "No break"
@@ -3067,7 +2989,7 @@ Partial Class Form1
         Me.Label128.Enabled = False
         Me.Label128.Location = New System.Drawing.Point(156, 68)
         Me.Label128.Name = "Label128"
-        Me.Label128.Size = New System.Drawing.Size(138, 17)
+        Me.Label128.Size = New System.Drawing.Size(106, 13)
         Me.Label128.TabIndex = 58
         Me.Label128.Text = "until after dec. digit #"
         '
@@ -3103,7 +3025,7 @@ Partial Class Form1
         Me.Label125.Enabled = False
         Me.Label125.Location = New System.Drawing.Point(352, 68)
         Me.Label125.Name = "Label125"
-        Me.Label125.Size = New System.Drawing.Size(150, 17)
+        Me.Label125.Size = New System.Drawing.Size(112, 13)
         Me.Label125.TabIndex = 45
         Me.Label125.Text = "digits per line grouping"
         '
@@ -3153,7 +3075,7 @@ Partial Class Form1
         Me.Label108.ForeColor = System.Drawing.Color.Blue
         Me.Label108.Location = New System.Drawing.Point(20, 4)
         Me.Label108.Name = "Label108"
-        Me.Label108.Size = New System.Drawing.Size(189, 17)
+        Me.Label108.Size = New System.Drawing.Size(150, 13)
         Me.Label108.TabIndex = 26
         Me.Label108.Text = "Handles Call Number Type(s): "
         '
@@ -3162,7 +3084,7 @@ Partial Class Form1
         Me.deweyRemoveAfter.AutoSize = True
         Me.deweyRemoveAfter.Location = New System.Drawing.Point(196, 136)
         Me.deweyRemoveAfter.Name = "deweyRemoveAfter"
-        Me.deweyRemoveAfter.Size = New System.Drawing.Size(258, 21)
+        Me.deweyRemoveAfter.Size = New System.Drawing.Size(205, 17)
         Me.deweyRemoveAfter.TabIndex = 24
         Me.deweyRemoveAfter.Tag = "check_deweyremoveafter"
         Me.deweyRemoveAfter.Text = "Remove character(s) from call number"
@@ -3199,7 +3121,7 @@ Partial Class Form1
         Me.deweyCharBreakAft.AutoSize = True
         Me.deweyCharBreakAft.Location = New System.Drawing.Point(260, 4)
         Me.deweyCharBreakAft.Name = "deweyCharBreakAft"
-        Me.deweyCharBreakAft.Size = New System.Drawing.Size(131, 21)
+        Me.deweyCharBreakAft.Size = New System.Drawing.Size(108, 17)
         Me.deweyCharBreakAft.TabIndex = 14
         Me.deweyCharBreakAft.Tag = "radio_deweycharbreakaft"
         Me.deweyCharBreakAft.Text = "after character(s):"
@@ -3221,7 +3143,7 @@ Partial Class Form1
         Me.deweyCharBreakb4.AutoSize = True
         Me.deweyCharBreakb4.Location = New System.Drawing.Point(164, 4)
         Me.deweyCharBreakb4.Name = "deweyCharBreakb4"
-        Me.deweyCharBreakb4.Size = New System.Drawing.Size(120, 21)
+        Me.deweyCharBreakb4.Size = New System.Drawing.Size(98, 17)
         Me.deweyCharBreakb4.TabIndex = 13
         Me.deweyCharBreakb4.Tag = "radio_deweycharbreakb4"
         Me.deweyCharBreakb4.Text = "Break before or"
@@ -3234,7 +3156,7 @@ Partial Class Form1
         Me.deweyOtherNoBreak.Checked = True
         Me.deweyOtherNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.deweyOtherNoBreak.Name = "deweyOtherNoBreak"
-        Me.deweyOtherNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.deweyOtherNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.deweyOtherNoBreak.TabIndex = 12
         Me.deweyOtherNoBreak.TabStop = True
         Me.deweyOtherNoBreak.Tag = "radio_deweycharnobreak"
@@ -3268,7 +3190,7 @@ Partial Class Form1
         Me.deweyPrefixBreak.Checked = True
         Me.deweyPrefixBreak.Location = New System.Drawing.Point(164, 4)
         Me.deweyPrefixBreak.Name = "deweyPrefixBreak"
-        Me.deweyPrefixBreak.Size = New System.Drawing.Size(130, 21)
+        Me.deweyPrefixBreak.Size = New System.Drawing.Size(105, 17)
         Me.deweyPrefixBreak.TabIndex = 13
         Me.deweyPrefixBreak.TabStop = True
         Me.deweyPrefixBreak.Tag = "radio_deweyprefixbreakaft"
@@ -3281,7 +3203,7 @@ Partial Class Form1
         Me.deweyPrefixNoBreak.AutoSize = True
         Me.deweyPrefixNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.deweyPrefixNoBreak.Name = "deweyPrefixNoBreak"
-        Me.deweyPrefixNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.deweyPrefixNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.deweyPrefixNoBreak.TabIndex = 12
         Me.deweyPrefixNoBreak.Tag = "radio_deweyprefixnobreak"
         Me.deweyPrefixNoBreak.Text = "No break"
@@ -3314,7 +3236,7 @@ Partial Class Form1
         Me.deweyCutterBreak.Checked = True
         Me.deweyCutterBreak.Location = New System.Drawing.Point(164, 4)
         Me.deweyCutterBreak.Name = "deweyCutterBreak"
-        Me.deweyCutterBreak.Size = New System.Drawing.Size(124, 21)
+        Me.deweyCutterBreak.Size = New System.Drawing.Size(105, 17)
         Me.deweyCutterBreak.TabIndex = 13
         Me.deweyCutterBreak.TabStop = True
         Me.deweyCutterBreak.Tag = "radio_deweycutterspacebreak"
@@ -3327,7 +3249,7 @@ Partial Class Form1
         Me.deweyCutterNoBreak.AutoSize = True
         Me.deweyCutterNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.deweyCutterNoBreak.Name = "deweyCutterNoBreak"
-        Me.deweyCutterNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.deweyCutterNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.deweyCutterNoBreak.TabIndex = 12
         Me.deweyCutterNoBreak.Tag = "radio_deweycutterspacenobreak"
         Me.deweyCutterNoBreak.Text = "No break"
@@ -3350,7 +3272,7 @@ Partial Class Form1
         Me.deweyDecimalBreakAft.AutoSize = True
         Me.deweyDecimalBreakAft.Location = New System.Drawing.Point(260, 4)
         Me.deweyDecimalBreakAft.Name = "deweyDecimalBreakAft"
-        Me.deweyDecimalBreakAft.Size = New System.Drawing.Size(104, 21)
+        Me.deweyDecimalBreakAft.Size = New System.Drawing.Size(85, 17)
         Me.deweyDecimalBreakAft.TabIndex = 14
         Me.deweyDecimalBreakAft.Tag = "radio_deweydecbreakaft"
         Me.deweyDecimalBreakAft.Text = "after decimal"
@@ -3372,7 +3294,7 @@ Partial Class Form1
         Me.deweyDecimalBreakb4.AutoSize = True
         Me.deweyDecimalBreakb4.Location = New System.Drawing.Point(164, 4)
         Me.deweyDecimalBreakb4.Name = "deweyDecimalBreakb4"
-        Me.deweyDecimalBreakb4.Size = New System.Drawing.Size(120, 21)
+        Me.deweyDecimalBreakb4.Size = New System.Drawing.Size(98, 17)
         Me.deweyDecimalBreakb4.TabIndex = 13
         Me.deweyDecimalBreakb4.Tag = "radio_deweydecbreakb4"
         Me.deweyDecimalBreakb4.Text = "Break before or"
@@ -3385,7 +3307,7 @@ Partial Class Form1
         Me.deweyDecimalNoBreak.Checked = True
         Me.deweyDecimalNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.deweyDecimalNoBreak.Name = "deweyDecimalNoBreak"
-        Me.deweyDecimalNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.deweyDecimalNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.deweyDecimalNoBreak.TabIndex = 12
         Me.deweyDecimalNoBreak.TabStop = True
         Me.deweyDecimalNoBreak.Tag = "radio_deweydecnobreak"
@@ -3421,7 +3343,7 @@ Partial Class Form1
         Me.sudocRemoveAfter.AutoSize = True
         Me.sudocRemoveAfter.Location = New System.Drawing.Point(200, 156)
         Me.sudocRemoveAfter.Name = "sudocRemoveAfter"
-        Me.sudocRemoveAfter.Size = New System.Drawing.Size(258, 21)
+        Me.sudocRemoveAfter.Size = New System.Drawing.Size(205, 17)
         Me.sudocRemoveAfter.TabIndex = 56
         Me.sudocRemoveAfter.Tag = "check_sudocremoveafter"
         Me.sudocRemoveAfter.Text = "Remove character(s) from call number"
@@ -3457,7 +3379,7 @@ Partial Class Form1
         Me.sudocCharBreakAft.AutoSize = True
         Me.sudocCharBreakAft.Location = New System.Drawing.Point(260, 4)
         Me.sudocCharBreakAft.Name = "sudocCharBreakAft"
-        Me.sudocCharBreakAft.Size = New System.Drawing.Size(131, 21)
+        Me.sudocCharBreakAft.Size = New System.Drawing.Size(108, 17)
         Me.sudocCharBreakAft.TabIndex = 14
         Me.sudocCharBreakAft.Tag = "radio_sudoccharbreakaft"
         Me.sudocCharBreakAft.Text = "after character(s):"
@@ -3478,7 +3400,7 @@ Partial Class Form1
         Me.sudocCharBreakB4.AutoSize = True
         Me.sudocCharBreakB4.Location = New System.Drawing.Point(164, 4)
         Me.sudocCharBreakB4.Name = "sudocCharBreakB4"
-        Me.sudocCharBreakB4.Size = New System.Drawing.Size(120, 21)
+        Me.sudocCharBreakB4.Size = New System.Drawing.Size(98, 17)
         Me.sudocCharBreakB4.TabIndex = 13
         Me.sudocCharBreakB4.Tag = "radio_sudoccharbreakb4"
         Me.sudocCharBreakB4.Text = "Break before or"
@@ -3490,7 +3412,7 @@ Partial Class Form1
         Me.sudocOtherNoBreak.Checked = True
         Me.sudocOtherNoBreak.Location = New System.Drawing.Point(88, 4)
         Me.sudocOtherNoBreak.Name = "sudocOtherNoBreak"
-        Me.sudocOtherNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.sudocOtherNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.sudocOtherNoBreak.TabIndex = 12
         Me.sudocOtherNoBreak.TabStop = True
         Me.sudocOtherNoBreak.Tag = "radio_sudoccharnobreak"
@@ -3517,7 +3439,7 @@ Partial Class Form1
         Me.Label109.ForeColor = System.Drawing.Color.Blue
         Me.Label109.Location = New System.Drawing.Point(20, 4)
         Me.Label109.Name = "Label109"
-        Me.Label109.Size = New System.Drawing.Size(189, 17)
+        Me.Label109.Size = New System.Drawing.Size(150, 13)
         Me.Label109.TabIndex = 52
         Me.Label109.Text = "Handles Call Number Type(s): "
         '
@@ -3537,7 +3459,7 @@ Partial Class Form1
         Me.sudocNoBreakB4Numerics.Checked = True
         Me.sudocNoBreakB4Numerics.Location = New System.Drawing.Point(104, 4)
         Me.sudocNoBreakB4Numerics.Name = "sudocNoBreakB4Numerics"
-        Me.sudocNoBreakB4Numerics.Size = New System.Drawing.Size(82, 21)
+        Me.sudocNoBreakB4Numerics.Size = New System.Drawing.Size(69, 17)
         Me.sudocNoBreakB4Numerics.TabIndex = 9
         Me.sudocNoBreakB4Numerics.TabStop = True
         Me.sudocNoBreakB4Numerics.Tag = "radio_sudocnobreakb4numerics"
@@ -3549,7 +3471,7 @@ Partial Class Form1
         Me.sudocBreakB4Numerics.AutoSize = True
         Me.sudocBreakB4Numerics.Location = New System.Drawing.Point(180, 4)
         Me.sudocBreakB4Numerics.Name = "sudocBreakB4Numerics"
-        Me.sudocBreakB4Numerics.Size = New System.Drawing.Size(162, 21)
+        Me.sudocBreakB4Numerics.Size = New System.Drawing.Size(131, 17)
         Me.sudocBreakB4Numerics.TabIndex = 8
         Me.sudocBreakB4Numerics.Tag = "radio_sudocbreakb4numerics"
         Me.sudocBreakB4Numerics.Text = "Break before numerics"
@@ -3581,7 +3503,7 @@ Partial Class Form1
         Me.sudocNoDecimalBreak.Checked = True
         Me.sudocNoDecimalBreak.Location = New System.Drawing.Point(104, 4)
         Me.sudocNoDecimalBreak.Name = "sudocNoDecimalBreak"
-        Me.sudocNoDecimalBreak.Size = New System.Drawing.Size(82, 21)
+        Me.sudocNoDecimalBreak.Size = New System.Drawing.Size(69, 17)
         Me.sudocNoDecimalBreak.TabIndex = 9
         Me.sudocNoDecimalBreak.TabStop = True
         Me.sudocNoDecimalBreak.Tag = "radio_sudocnobrkdecimal"
@@ -3593,7 +3515,7 @@ Partial Class Form1
         Me.sudocBreakDecimal.AutoSize = True
         Me.sudocBreakDecimal.Location = New System.Drawing.Point(180, 4)
         Me.sudocBreakDecimal.Name = "sudocBreakDecimal"
-        Me.sudocBreakDecimal.Size = New System.Drawing.Size(153, 21)
+        Me.sudocBreakDecimal.Size = New System.Drawing.Size(125, 17)
         Me.sudocBreakDecimal.TabIndex = 8
         Me.sudocBreakDecimal.Tag = "radio_sudocbrkdecimal"
         Me.sudocBreakDecimal.Text = "Break before decimal"
@@ -3615,7 +3537,7 @@ Partial Class Form1
         Me.sudocBreakBeforeColon.Checked = True
         Me.sudocBreakBeforeColon.Location = New System.Drawing.Point(200, 68)
         Me.sudocBreakBeforeColon.Name = "sudocBreakBeforeColon"
-        Me.sudocBreakBeforeColon.Size = New System.Drawing.Size(120, 21)
+        Me.sudocBreakBeforeColon.Size = New System.Drawing.Size(98, 17)
         Me.sudocBreakBeforeColon.TabIndex = 45
         Me.sudocBreakBeforeColon.TabStop = True
         Me.sudocBreakBeforeColon.Tag = "radio_sudocbrkb4colon"
@@ -3627,7 +3549,7 @@ Partial Class Form1
         Me.sudocBreakAfterColon.AutoSize = True
         Me.sudocBreakAfterColon.Location = New System.Drawing.Point(300, 68)
         Me.sudocBreakAfterColon.Name = "sudocBreakAfterColon"
-        Me.sudocBreakAfterColon.Size = New System.Drawing.Size(91, 21)
+        Me.sudocBreakAfterColon.Size = New System.Drawing.Size(75, 17)
         Me.sudocBreakAfterColon.TabIndex = 46
         Me.sudocBreakAfterColon.Tag = "radio_sudocbrkaftercolon"
         Me.sudocBreakAfterColon.Text = "after colon"
@@ -3638,7 +3560,7 @@ Partial Class Form1
         Me.sudocNoColonBreak.AutoSize = True
         Me.sudocNoColonBreak.Location = New System.Drawing.Point(124, 68)
         Me.sudocNoColonBreak.Name = "sudocNoColonBreak"
-        Me.sudocNoColonBreak.Size = New System.Drawing.Size(82, 21)
+        Me.sudocNoColonBreak.Size = New System.Drawing.Size(69, 17)
         Me.sudocNoColonBreak.TabIndex = 47
         Me.sudocNoColonBreak.Tag = "radio_sudoccolonnobrk"
         Me.sudocNoColonBreak.Text = "No break"
@@ -3669,7 +3591,7 @@ Partial Class Form1
         Me.sudocDashNoBreak.AutoSize = True
         Me.sudocDashNoBreak.Location = New System.Drawing.Point(116, 4)
         Me.sudocDashNoBreak.Name = "sudocDashNoBreak"
-        Me.sudocDashNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.sudocDashNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.sudocDashNoBreak.TabIndex = 7
         Me.sudocDashNoBreak.Tag = "radio_sudocdashnobrk"
         Me.sudocDashNoBreak.Text = "No break"
@@ -3681,7 +3603,7 @@ Partial Class Form1
         Me.sudocDashBreak.Checked = True
         Me.sudocDashBreak.Location = New System.Drawing.Point(192, 4)
         Me.sudocDashBreak.Name = "sudocDashBreak"
-        Me.sudocDashBreak.Size = New System.Drawing.Size(162, 21)
+        Me.sudocDashBreak.Size = New System.Drawing.Size(137, 17)
         Me.sudocDashBreak.TabIndex = 6
         Me.sudocDashBreak.TabStop = True
         Me.sudocDashBreak.Tag = "radio_sudocdashbrk"
@@ -3713,7 +3635,7 @@ Partial Class Form1
         Me.sudocSlashNobreak.AutoSize = True
         Me.sudocSlashNobreak.Location = New System.Drawing.Point(124, 4)
         Me.sudocSlashNobreak.Name = "sudocSlashNobreak"
-        Me.sudocSlashNobreak.Size = New System.Drawing.Size(82, 21)
+        Me.sudocSlashNobreak.Size = New System.Drawing.Size(69, 17)
         Me.sudocSlashNobreak.TabIndex = 8
         Me.sudocSlashNobreak.Tag = "radio_sudocslashnobrk"
         Me.sudocSlashNobreak.Text = "No break"
@@ -3725,7 +3647,7 @@ Partial Class Form1
         Me.sudocSlashBreak.Checked = True
         Me.sudocSlashBreak.Location = New System.Drawing.Point(200, 4)
         Me.sudocSlashBreak.Name = "sudocSlashBreak"
-        Me.sudocSlashBreak.Size = New System.Drawing.Size(163, 21)
+        Me.sudocSlashBreak.Size = New System.Drawing.Size(138, 17)
         Me.sudocSlashBreak.TabIndex = 7
         Me.sudocSlashBreak.TabStop = True
         Me.sudocSlashBreak.Tag = "radio_sudocslashbrk"
@@ -3781,7 +3703,7 @@ Partial Class Form1
         Me.Label110.ForeColor = System.Drawing.Color.Blue
         Me.Label110.Location = New System.Drawing.Point(20, 4)
         Me.Label110.Name = "Label110"
-        Me.Label110.Size = New System.Drawing.Size(189, 17)
+        Me.Label110.Size = New System.Drawing.Size(150, 13)
         Me.Label110.TabIndex = 26
         Me.Label110.Text = "Handles Call Number Type(s): "
         '
@@ -3790,7 +3712,7 @@ Partial Class Form1
         Me.otherRemoveAfter.AutoSize = True
         Me.otherRemoveAfter.Location = New System.Drawing.Point(184, 104)
         Me.otherRemoveAfter.Name = "otherRemoveAfter"
-        Me.otherRemoveAfter.Size = New System.Drawing.Size(258, 21)
+        Me.otherRemoveAfter.Size = New System.Drawing.Size(205, 17)
         Me.otherRemoveAfter.TabIndex = 24
         Me.otherRemoveAfter.Tag = "check_otherremoveafter"
         Me.otherRemoveAfter.Text = "Remove character(s) from call number"
@@ -3801,7 +3723,7 @@ Partial Class Form1
         Me.otherFirstSpaceBreak.AutoSize = True
         Me.otherFirstSpaceBreak.Location = New System.Drawing.Point(280, 40)
         Me.otherFirstSpaceBreak.Name = "otherFirstSpaceBreak"
-        Me.otherFirstSpaceBreak.Size = New System.Drawing.Size(107, 21)
+        Me.otherFirstSpaceBreak.Size = New System.Drawing.Size(87, 17)
         Me.otherFirstSpaceBreak.TabIndex = 16
         Me.otherFirstSpaceBreak.Tag = "radio_otherfirstspacebrk"
         Me.otherFirstSpaceBreak.Text = "Break on first"
@@ -3823,7 +3745,7 @@ Partial Class Form1
         Me.otherNumBreakAfter.AutoSize = True
         Me.otherNumBreakAfter.Location = New System.Drawing.Point(280, 4)
         Me.otherNumBreakAfter.Name = "otherNumBreakAfter"
-        Me.otherNumBreakAfter.Size = New System.Drawing.Size(92, 21)
+        Me.otherNumBreakAfter.Size = New System.Drawing.Size(77, 17)
         Me.otherNumBreakAfter.TabIndex = 19
         Me.otherNumBreakAfter.Tag = "radio_othernumbrkafter"
         Me.otherNumBreakAfter.Text = "Break after"
@@ -3834,7 +3756,7 @@ Partial Class Form1
         Me.otherNumBreakb4.AutoSize = True
         Me.otherNumBreakb4.Location = New System.Drawing.Point(184, 4)
         Me.otherNumBreakb4.Name = "otherNumBreakb4"
-        Me.otherNumBreakb4.Size = New System.Drawing.Size(120, 21)
+        Me.otherNumBreakb4.Size = New System.Drawing.Size(98, 17)
         Me.otherNumBreakb4.TabIndex = 16
         Me.otherNumBreakb4.Tag = "radio_othernumbrkb4"
         Me.otherNumBreakb4.Text = "Break before or"
@@ -3846,7 +3768,7 @@ Partial Class Form1
         Me.othernumnobreak.Checked = True
         Me.othernumnobreak.Location = New System.Drawing.Point(108, 4)
         Me.othernumnobreak.Name = "othernumnobreak"
-        Me.othernumnobreak.Size = New System.Drawing.Size(82, 21)
+        Me.othernumnobreak.Size = New System.Drawing.Size(69, 17)
         Me.othernumnobreak.TabIndex = 17
         Me.othernumnobreak.TabStop = True
         Me.othernumnobreak.Tag = "radio_othernumnobrk"
@@ -3879,7 +3801,7 @@ Partial Class Form1
         Me.otherListBreakAfter.AutoSize = True
         Me.otherListBreakAfter.Location = New System.Drawing.Point(256, 4)
         Me.otherListBreakAfter.Name = "otherListBreakAfter"
-        Me.otherListBreakAfter.Size = New System.Drawing.Size(131, 21)
+        Me.otherListBreakAfter.Size = New System.Drawing.Size(108, 17)
         Me.otherListBreakAfter.TabIndex = 12
         Me.otherListBreakAfter.Tag = "radio_otherbrkafter"
         Me.otherListBreakAfter.Text = "after character(s):"
@@ -3890,7 +3812,7 @@ Partial Class Form1
         Me.otherListBreakb4.AutoSize = True
         Me.otherListBreakb4.Location = New System.Drawing.Point(160, 4)
         Me.otherListBreakb4.Name = "otherListBreakb4"
-        Me.otherListBreakb4.Size = New System.Drawing.Size(120, 21)
+        Me.otherListBreakb4.Size = New System.Drawing.Size(98, 17)
         Me.otherListBreakb4.TabIndex = 10
         Me.otherListBreakb4.Tag = "radio_otherbrkb4"
         Me.otherListBreakb4.Text = "Break before or"
@@ -3902,7 +3824,7 @@ Partial Class Form1
         Me.otherListNoBreak.Checked = True
         Me.otherListNoBreak.Location = New System.Drawing.Point(84, 4)
         Me.otherListNoBreak.Name = "otherListNoBreak"
-        Me.otherListNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.otherListNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.otherListNoBreak.TabIndex = 11
         Me.otherListNoBreak.TabStop = True
         Me.otherListNoBreak.Tag = "radio_othernolistbrk"
@@ -3938,7 +3860,7 @@ Partial Class Form1
         Me.otherAllSpaceBreak.Checked = True
         Me.otherAllSpaceBreak.Location = New System.Drawing.Point(184, 40)
         Me.otherAllSpaceBreak.Name = "otherAllSpaceBreak"
-        Me.otherAllSpaceBreak.Size = New System.Drawing.Size(97, 21)
+        Me.otherAllSpaceBreak.Size = New System.Drawing.Size(81, 17)
         Me.otherAllSpaceBreak.TabIndex = 5
         Me.otherAllSpaceBreak.TabStop = True
         Me.otherAllSpaceBreak.Tag = "radio_otherallspacebrk"
@@ -3950,7 +3872,7 @@ Partial Class Form1
         Me.otherSpaceNoBreak.AutoSize = True
         Me.otherSpaceNoBreak.Location = New System.Drawing.Point(108, 40)
         Me.otherSpaceNoBreak.Name = "otherSpaceNoBreak"
-        Me.otherSpaceNoBreak.Size = New System.Drawing.Size(82, 21)
+        Me.otherSpaceNoBreak.Size = New System.Drawing.Size(69, 17)
         Me.otherSpaceNoBreak.TabIndex = 6
         Me.otherSpaceNoBreak.Tag = "radio_othernospacebrk"
         Me.otherSpaceNoBreak.Text = "No break"
@@ -4012,7 +3934,7 @@ Partial Class Form1
         Me.spaceBreak.AutoSize = True
         Me.spaceBreak.Location = New System.Drawing.Point(40, 60)
         Me.spaceBreak.Name = "spaceBreak"
-        Me.spaceBreak.Size = New System.Drawing.Size(240, 21)
+        Me.spaceBreak.Size = New System.Drawing.Size(195, 17)
         Me.spaceBreak.TabIndex = 51
         Me.spaceBreak.Tag = "check_holdingsspacebreak"
         Me.spaceBreak.Text = "Break on spaces between elements"
@@ -4024,7 +3946,7 @@ Partial Class Form1
         Me.issueListBreakAfter.AutoSize = True
         Me.issueListBreakAfter.Location = New System.Drawing.Point(240, 84)
         Me.issueListBreakAfter.Name = "issueListBreakAfter"
-        Me.issueListBreakAfter.Size = New System.Drawing.Size(131, 21)
+        Me.issueListBreakAfter.Size = New System.Drawing.Size(108, 17)
         Me.issueListBreakAfter.TabIndex = 50
         Me.issueListBreakAfter.Tag = "radio_issuebrkafter"
         Me.issueListBreakAfter.Text = "after character(s):"
@@ -4035,7 +3957,7 @@ Partial Class Form1
         Me.issueListBreakB4.AutoSize = True
         Me.issueListBreakB4.Location = New System.Drawing.Point(144, 84)
         Me.issueListBreakB4.Name = "issueListBreakB4"
-        Me.issueListBreakB4.Size = New System.Drawing.Size(120, 21)
+        Me.issueListBreakB4.Size = New System.Drawing.Size(98, 17)
         Me.issueListBreakB4.TabIndex = 48
         Me.issueListBreakB4.Tag = "radio_issuebrkb4"
         Me.issueListBreakB4.Text = "Break before or"
@@ -4047,7 +3969,7 @@ Partial Class Form1
         Me.issueListNoBreak.Checked = True
         Me.issueListNoBreak.Location = New System.Drawing.Point(40, 84)
         Me.issueListNoBreak.Name = "issueListNoBreak"
-        Me.issueListNoBreak.Size = New System.Drawing.Size(125, 21)
+        Me.issueListNoBreak.Size = New System.Drawing.Size(101, 17)
         Me.issueListNoBreak.TabIndex = 49
         Me.issueListNoBreak.TabStop = True
         Me.issueListNoBreak.Tag = "radio_issuenolistbrk"
@@ -4059,7 +3981,7 @@ Partial Class Form1
         Me.issueRemoveAfter.AutoSize = True
         Me.issueRemoveAfter.Location = New System.Drawing.Point(144, 108)
         Me.issueRemoveAfter.Name = "issueRemoveAfter"
-        Me.issueRemoveAfter.Size = New System.Drawing.Size(239, 21)
+        Me.issueRemoveAfter.Size = New System.Drawing.Size(190, 17)
         Me.issueRemoveAfter.TabIndex = 47
         Me.issueRemoveAfter.Tag = "check_issueremoveother"
         Me.issueRemoveAfter.Text = "Remove character(s) from holdings"
@@ -4085,7 +4007,7 @@ Partial Class Form1
         Me.BreakParen.CheckState = System.Windows.Forms.CheckState.Checked
         Me.BreakParen.Location = New System.Drawing.Point(40, 12)
         Me.BreakParen.Name = "BreakParen"
-        Me.BreakParen.Size = New System.Drawing.Size(178, 21)
+        Me.BreakParen.Size = New System.Drawing.Size(143, 17)
         Me.BreakParen.TabIndex = 44
         Me.BreakParen.Tag = "check_issuebreakparen"
         Me.BreakParen.Text = "Break on ""("" in long lines"
@@ -4100,7 +4022,7 @@ Partial Class Form1
         Me.ProtectColon.Enabled = False
         Me.ProtectColon.Location = New System.Drawing.Point(144, 36)
         Me.ProtectColon.Name = "ProtectColon"
-        Me.ProtectColon.Size = New System.Drawing.Size(262, 21)
+        Me.ProtectColon.Size = New System.Drawing.Size(210, 17)
         Me.ProtectColon.TabIndex = 43
         Me.ProtectColon.Tag = "check_protectcolon"
         Me.ProtectColon.Text = "...but leave it visible inside parentheses"
@@ -4114,7 +4036,7 @@ Partial Class Form1
         Me.ColonBreak.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ColonBreak.Location = New System.Drawing.Point(40, 36)
         Me.ColonBreak.Name = "ColonBreak"
-        Me.ColonBreak.Size = New System.Drawing.Size(127, 21)
+        Me.ColonBreak.Size = New System.Drawing.Size(107, 17)
         Me.ColonBreak.TabIndex = 42
         Me.ColonBreak.Tag = "check_issuebreakcolon"
         Me.ColonBreak.Text = "Break on colon..."
@@ -4249,7 +4171,7 @@ Partial Class Form1
         Me.chkUsePocketLabels.AutoSize = True
         Me.chkUsePocketLabels.Location = New System.Drawing.Point(432, 8)
         Me.chkUsePocketLabels.Name = "chkUsePocketLabels"
-        Me.chkUsePocketLabels.Size = New System.Drawing.Size(109, 21)
+        Me.chkUsePocketLabels.Size = New System.Drawing.Size(94, 17)
         Me.chkUsePocketLabels.TabIndex = 59
         Me.chkUsePocketLabels.Tag = "check_pocketLabels"
         Me.chkUsePocketLabels.Text = "Pocket Labels"
@@ -4260,7 +4182,7 @@ Partial Class Form1
         '
         Me.nonFlagWrapWidth.Location = New System.Drawing.Point(64, 228)
         Me.nonFlagWrapWidth.Name = "nonFlagWrapWidth"
-        Me.nonFlagWrapWidth.Size = New System.Drawing.Size(24, 25)
+        Me.nonFlagWrapWidth.Size = New System.Drawing.Size(24, 20)
         Me.nonFlagWrapWidth.TabIndex = 53
         Me.nonFlagWrapWidth.Tag = "text_nonflagwrapwidth"
         Me.nonFlagWrapWidth.Text = "1.0"
@@ -4270,7 +4192,7 @@ Partial Class Form1
         '
         Me.flagWrapWidth.Location = New System.Drawing.Point(36, 228)
         Me.flagWrapWidth.Name = "flagWrapWidth"
-        Me.flagWrapWidth.Size = New System.Drawing.Size(24, 25)
+        Me.flagWrapWidth.Size = New System.Drawing.Size(24, 20)
         Me.flagWrapWidth.TabIndex = 52
         Me.flagWrapWidth.Tag = "text_flagwrapwidth"
         Me.flagWrapWidth.Text = "2.4"
@@ -4280,7 +4202,7 @@ Partial Class Form1
         '
         Me.nonFlagDefaults.Location = New System.Drawing.Point(28, 248)
         Me.nonFlagDefaults.Name = "nonFlagDefaults"
-        Me.nonFlagDefaults.Size = New System.Drawing.Size(56, 25)
+        Me.nonFlagDefaults.Size = New System.Drawing.Size(56, 20)
         Me.nonFlagDefaults.TabIndex = 48
         Me.nonFlagDefaults.Tag = "text_nonflagdefaults"
         Me.nonFlagDefaults.Text = "0.1|0.1|0.2|1.0|0.0|2.0|0.0|5|8|7|9|true|<call_number>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "<issue_level_description>" &
@@ -4291,7 +4213,7 @@ Partial Class Form1
         '
         Me.flagDefaults.Location = New System.Drawing.Point(28, 268)
         Me.flagDefaults.Name = "flagDefaults"
-        Me.flagDefaults.Size = New System.Drawing.Size(56, 25)
+        Me.flagDefaults.Size = New System.Drawing.Size(56, 20)
         Me.flagDefaults.TabIndex = 47
         Me.flagDefaults.Tag = "text_flagdefaults"
         Me.flagDefaults.Text = "0.5|0.1|0.2|2.7|0.0|7.0|0.0|1|4|30|50|false|!<barcode>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "~<location_name>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%<call_" &
@@ -4448,7 +4370,7 @@ Partial Class Form1
         Me.FlagSlips.AutoSize = True
         Me.FlagSlips.Location = New System.Drawing.Point(84, 188)
         Me.FlagSlips.Name = "FlagSlips"
-        Me.FlagSlips.Size = New System.Drawing.Size(112, 21)
+        Me.FlagSlips.Size = New System.Drawing.Size(90, 17)
         Me.FlagSlips.TabIndex = 36
         Me.FlagSlips.Tag = "check_flagslips"
         Me.FlagSlips.Text = "Print flag slips"
@@ -4468,10 +4390,10 @@ Partial Class Form1
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.Location = New System.Drawing.Point(4, 8)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(76, 17)
+        Me.Label28.Size = New System.Drawing.Size(85, 16)
         Me.Label28.TabIndex = 29
         Me.Label28.Text = "Label type:"
         '
@@ -4613,7 +4535,7 @@ Partial Class Form1
         '
         Me.spineDefaults.Location = New System.Drawing.Point(28, 288)
         Me.spineDefaults.Name = "spineDefaults"
-        Me.spineDefaults.Size = New System.Drawing.Size(56, 25)
+        Me.spineDefaults.Size = New System.Drawing.Size(56, 20)
         Me.spineDefaults.TabIndex = 65
         Me.spineDefaults.Tag = "text_spinedefaults"
         Me.spineDefaults.Text = "0.1|0.1|0.2|1.0|0.0|2.0|0.0|5|8|7|9|true|"
@@ -4623,7 +4545,7 @@ Partial Class Form1
         '
         Me.pocketDefaults.Location = New System.Drawing.Point(28, 308)
         Me.pocketDefaults.Name = "pocketDefaults"
-        Me.pocketDefaults.Size = New System.Drawing.Size(56, 25)
+        Me.pocketDefaults.Size = New System.Drawing.Size(56, 20)
         Me.pocketDefaults.TabIndex = 66
         Me.pocketDefaults.Tag = "text_pocketdefaults"
         Me.pocketDefaults.Text = "0.1|0.1|0.2|1.0|0.0|2.0|0.0|5|8|7|9|true|"
@@ -4654,7 +4576,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.ComboBox1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(528, 368)
+        Me.TabPage3.Size = New System.Drawing.Size(528, 330)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Label Prefixes"
         '
@@ -4702,7 +4624,7 @@ Partial Class Form1
         Me.Label54.ForeColor = System.Drawing.Color.Gray
         Me.Label54.Location = New System.Drawing.Point(12, 256)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(259, 17)
+        Me.Label54.Size = New System.Drawing.Size(202, 13)
         Me.Label54.TabIndex = 28
         Me.Label54.Text = "Double click an entry to change or delete"
         '
@@ -4786,7 +4708,7 @@ Partial Class Form1
         Me.altURL.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.altURL.Location = New System.Drawing.Point(272, 48)
         Me.altURL.Name = "altURL"
-        Me.altURL.Size = New System.Drawing.Size(168, 18)
+        Me.altURL.Size = New System.Drawing.Size(168, 13)
         Me.altURL.TabIndex = 20
         Me.altURL.Tag = "text_abovelabeltexturl"
         Me.ToolTip1.SetToolTip(Me.altURL, "URL to the web directory containing the ""aboveLabelText.txt"" file")
@@ -4796,7 +4718,7 @@ Partial Class Form1
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(244, 260)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 17)
+        Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 17
         Me.Label8.Text = "Show:"
         '
@@ -4827,7 +4749,7 @@ Partial Class Form1
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(244, 296)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(106, 17)
+        Me.Label14.Size = New System.Drawing.Size(86, 13)
         Me.Label14.TabIndex = 13
         Me.Label14.Text = "Location source:"
         '
@@ -4836,7 +4758,7 @@ Partial Class Form1
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(16, 296)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(97, 17)
+        Me.Label13.Size = New System.Drawing.Size(76, 13)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Library source:"
         '
@@ -4868,7 +4790,7 @@ Partial Class Form1
         Me.ComboBox1.Items.AddRange(New Object() {"All Libraries", "Bapst", "Burns", "Burns - Archives", "Educational Resource Center", "Law", "O'Neill", "Social Work Library", "Theology and Ministry Library"})
         Me.ComboBox1.Location = New System.Drawing.Point(288, 256)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(160, 25)
+        Me.ComboBox1.Size = New System.Drawing.Size(160, 21)
         Me.ComboBox1.Sorted = True
         Me.ComboBox1.TabIndex = 0
         Me.ComboBox1.Text = "All Libraries"
@@ -4884,9 +4806,9 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.lbl_copyXMLtext)
         Me.TabPage4.Controls.Add(Me.includeSettings)
         Me.TabPage4.Controls.Add(Me.xmlCopyDone)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(528, 364)
+        Me.TabPage4.Size = New System.Drawing.Size(528, 330)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Current XML"
         '
@@ -4903,14 +4825,11 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.BackgroundImage = Global.SpineLabeler.My.Resources.Resources.somBkgrnd
         Me.PictureBox1.Location = New System.Drawing.Point(4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(520, 319)
+        Me.PictureBox1.Size = New System.Drawing.Size(520, 320)
         Me.PictureBox1.TabIndex = 36
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
@@ -4920,7 +4839,7 @@ Partial Class Form1
         Me.chkXMLWarning.AutoSize = True
         Me.chkXMLWarning.Location = New System.Drawing.Point(4, 4)
         Me.chkXMLWarning.Name = "chkXMLWarning"
-        Me.chkXMLWarning.Size = New System.Drawing.Size(164, 21)
+        Me.chkXMLWarning.Size = New System.Drawing.Size(133, 17)
         Me.chkXMLWarning.TabIndex = 38
         Me.chkXMLWarning.Tag = "check_xmlwarning"
         Me.chkXMLWarning.Text = "Stop on XML warnings"
@@ -4929,14 +4848,11 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RichTextBox1.Font = New System.Drawing.Font("Arial Unicode MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Red
         Me.RichTextBox1.Location = New System.Drawing.Point(4, 24)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(520, 284)
+        Me.RichTextBox1.Size = New System.Drawing.Size(520, 288)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
@@ -4958,7 +4874,7 @@ Partial Class Form1
         Me.includeSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.includeSettings.Location = New System.Drawing.Point(360, 4)
         Me.includeSettings.Name = "includeSettings"
-        Me.includeSettings.Size = New System.Drawing.Size(123, 21)
+        Me.includeSettings.Size = New System.Drawing.Size(100, 17)
         Me.includeSettings.TabIndex = 41
         Me.includeSettings.Tag = "chk_includesettings"
         Me.includeSettings.Text = "Include settings"
@@ -4994,7 +4910,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.btnMonitor)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(528, 368)
+        Me.TabPage5.Size = New System.Drawing.Size(528, 330)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Alma Access"
         '
@@ -5003,7 +4919,7 @@ Partial Class Form1
         Me.dontConvert.AutoSize = True
         Me.dontConvert.Location = New System.Drawing.Point(324, 67)
         Me.dontConvert.Name = "dontConvert"
-        Me.dontConvert.Size = New System.Drawing.Size(139, 21)
+        Me.dontConvert.Size = New System.Drawing.Size(115, 17)
         Me.dontConvert.TabIndex = 72
         Me.dontConvert.Tag = ""
         Me.dontConvert.Text = "Don't convert XML"
@@ -5026,7 +4942,7 @@ Partial Class Form1
         Me.Label134.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Label134.Location = New System.Drawing.Point(140, 67)
         Me.Label134.Name = "Label134"
-        Me.Label134.Size = New System.Drawing.Size(122, 17)
+        Me.Label134.Size = New System.Drawing.Size(95, 13)
         Me.Label134.TabIndex = 69
         Me.Label134.Text = "(Java not required)"
         '
@@ -5044,7 +4960,7 @@ Partial Class Form1
         '
         Me.apiMethod.Location = New System.Drawing.Point(144, 111)
         Me.apiMethod.Name = "apiMethod"
-        Me.apiMethod.Size = New System.Drawing.Size(296, 25)
+        Me.apiMethod.Size = New System.Drawing.Size(296, 20)
         Me.apiMethod.TabIndex = 65
         Me.apiMethod.Tag = "text_restfulmethod"
         Me.apiMethod.Text = "/almaws/v1/items?view=label&item_barcode={item_barcode}"
@@ -5074,7 +4990,7 @@ Partial Class Form1
         '
         Me.apiKey.Location = New System.Drawing.Point(144, 135)
         Me.apiKey.Name = "apiKey"
-        Me.apiKey.Size = New System.Drawing.Size(296, 25)
+        Me.apiKey.Size = New System.Drawing.Size(296, 20)
         Me.apiKey.TabIndex = 62
         Me.apiKey.Tag = "texo_restfulapikey"
         Me.apiKey.Text = "--Your Ex Libris API Key goes here --"
@@ -5084,7 +5000,7 @@ Partial Class Form1
         '
         Me.apiURL.Location = New System.Drawing.Point(144, 87)
         Me.apiURL.Name = "apiURL"
-        Me.apiURL.Size = New System.Drawing.Size(296, 25)
+        Me.apiURL.Size = New System.Drawing.Size(296, 20)
         Me.apiURL.TabIndex = 61
         Me.apiURL.Tag = "text_restfulalmaurl"
         Me.apiURL.Text = "https://--your Alma server address goes here--"
@@ -5094,10 +5010,10 @@ Partial Class Form1
         '
         Me.UseRestfulApi.AutoSize = True
         Me.UseRestfulApi.Checked = True
-        Me.UseRestfulApi.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UseRestfulApi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UseRestfulApi.Location = New System.Drawing.Point(4, 63)
         Me.UseRestfulApi.Name = "UseRestfulApi"
-        Me.UseRestfulApi.Size = New System.Drawing.Size(114, 19)
+        Me.UseRestfulApi.Size = New System.Drawing.Size(131, 19)
         Me.UseRestfulApi.TabIndex = 60
         Me.UseRestfulApi.TabStop = True
         Me.UseRestfulApi.Tag = "radio_useRESTful"
@@ -5107,7 +5023,6 @@ Partial Class Form1
         'ispList
         '
         Me.ispList.FormattingEnabled = True
-        Me.ispList.ItemHeight = 17
         Me.ispList.Location = New System.Drawing.Point(448, 123)
         Me.ispList.Name = "ispList"
         Me.ispList.Size = New System.Drawing.Size(72, 17)
@@ -5151,7 +5066,7 @@ Partial Class Form1
         '
         Me.XMLPath.Location = New System.Drawing.Point(480, 39)
         Me.XMLPath.Name = "XMLPath"
-        Me.XMLPath.Size = New System.Drawing.Size(40, 25)
+        Me.XMLPath.Size = New System.Drawing.Size(40, 20)
         Me.XMLPath.TabIndex = 0
         Me.XMLPath.TabStop = False
         Me.XMLPath.Tag = "text_monitorfolder"
@@ -5199,7 +5114,7 @@ Partial Class Form1
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(528, 368)
+        Me.TabPage6.Size = New System.Drawing.Size(528, 330)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Reports"
         '
@@ -5208,7 +5123,7 @@ Partial Class Form1
         Me.showIsp.AutoSize = True
         Me.showIsp.Location = New System.Drawing.Point(428, 80)
         Me.showIsp.Name = "showIsp"
-        Me.showIsp.Size = New System.Drawing.Size(45, 21)
+        Me.showIsp.Size = New System.Drawing.Size(40, 17)
         Me.showIsp.TabIndex = 25
         Me.showIsp.Text = "Isp"
         Me.showIsp.UseVisualStyleBackColor = True
@@ -5218,7 +5133,7 @@ Partial Class Form1
         Me.chkAddHostname.AutoSize = True
         Me.chkAddHostname.Location = New System.Drawing.Point(300, 80)
         Me.chkAddHostname.Name = "chkAddHostname"
-        Me.chkAddHostname.Size = New System.Drawing.Size(90, 21)
+        Me.chkAddHostname.Size = New System.Drawing.Size(74, 17)
         Me.chkAddHostname.TabIndex = 24
         Me.chkAddHostname.Text = "Hostname"
         Me.chkAddHostname.UseVisualStyleBackColor = True
@@ -5249,7 +5164,7 @@ Partial Class Form1
         Me.chkGeoList.Enabled = False
         Me.chkGeoList.Location = New System.Drawing.Point(376, 80)
         Me.chkGeoList.Name = "chkGeoList"
-        Me.chkGeoList.Size = New System.Drawing.Size(54, 21)
+        Me.chkGeoList.Size = New System.Drawing.Size(47, 17)
         Me.chkGeoList.TabIndex = 21
         Me.chkGeoList.Text = "Map"
         Me.chkGeoList.UseVisualStyleBackColor = True
@@ -5260,7 +5175,7 @@ Partial Class Form1
         Me.inclScanned.AutoSize = True
         Me.inclScanned.Location = New System.Drawing.Point(300, 60)
         Me.inclScanned.Name = "inclScanned"
-        Me.inclScanned.Size = New System.Drawing.Size(200, 21)
+        Me.inclScanned.Size = New System.Drawing.Size(161, 17)
         Me.inclScanned.TabIndex = 19
         Me.inclScanned.Text = "Include scanned and printed"
         Me.ToolTip1.SetToolTip(Me.inclScanned, "Check to include lables that were scanned, but not printed.")
@@ -5272,7 +5187,7 @@ Partial Class Form1
         Me.Label61.ForeColor = System.Drawing.Color.Red
         Me.Label61.Location = New System.Drawing.Point(104, 16)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(35, 17)
+        Me.Label61.Size = New System.Drawing.Size(29, 13)
         Me.Label61.TabIndex = 18
         Me.Label61.Text = "Beta"
         '
@@ -5281,7 +5196,7 @@ Partial Class Form1
         Me.Label60.AutoSize = True
         Me.Label60.Location = New System.Drawing.Point(300, 8)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(168, 17)
+        Me.Label60.Size = New System.Drawing.Size(124, 13)
         Me.Label60.TabIndex = 17
         Me.Label60.Text = "--- Sorted by date/time ---"
         '
@@ -5301,7 +5216,7 @@ Partial Class Form1
         Me.byAlpha.AutoSize = True
         Me.byAlpha.Location = New System.Drawing.Point(8, 52)
         Me.byAlpha.Name = "byAlpha"
-        Me.byAlpha.Size = New System.Drawing.Size(61, 21)
+        Me.byAlpha.Size = New System.Drawing.Size(52, 17)
         Me.byAlpha.TabIndex = 17
         Me.byAlpha.Text = "Alpha"
         Me.ToolTip1.SetToolTip(Me.byAlpha, "Sort report alphabetically")
@@ -5313,7 +5228,7 @@ Partial Class Form1
         Me.byCount.Checked = True
         Me.byCount.Location = New System.Drawing.Point(8, 28)
         Me.byCount.Name = "byCount"
-        Me.byCount.Size = New System.Drawing.Size(63, 21)
+        Me.byCount.Size = New System.Drawing.Size(53, 17)
         Me.byCount.TabIndex = 17
         Me.byCount.TabStop = True
         Me.byCount.Text = "Count"
@@ -5323,7 +5238,6 @@ Partial Class Form1
         'sortSTL
         '
         Me.sortSTL.FormattingEnabled = True
-        Me.sortSTL.ItemHeight = 17
         Me.sortSTL.Location = New System.Drawing.Point(448, 0)
         Me.sortSTL.Name = "sortSTL"
         Me.sortSTL.Size = New System.Drawing.Size(40, 17)
@@ -5335,7 +5249,7 @@ Partial Class Form1
         Me.radioByLocation.AutoSize = True
         Me.radioByLocation.Location = New System.Drawing.Point(140, 60)
         Me.radioByLocation.Name = "radioByLocation"
-        Me.radioByLocation.Size = New System.Drawing.Size(96, 21)
+        Me.radioByLocation.Size = New System.Drawing.Size(81, 17)
         Me.radioByLocation.TabIndex = 14
         Me.radioByLocation.Text = "By Location"
         Me.ToolTip1.SetToolTip(Me.radioByLocation, "Count labels printed for each shelving location in specified date range.")
@@ -5355,7 +5269,7 @@ Partial Class Form1
         '
         Me.searchArg.Location = New System.Drawing.Point(412, 36)
         Me.searchArg.Name = "searchArg"
-        Me.searchArg.Size = New System.Drawing.Size(104, 25)
+        Me.searchArg.Size = New System.Drawing.Size(104, 20)
         Me.searchArg.TabIndex = 12
         Me.ToolTip1.SetToolTip(Me.searchArg, "Show detail record only if it includes this exact text string.")
         '
@@ -5364,7 +5278,7 @@ Partial Class Form1
         Me.radioSearch.AutoSize = True
         Me.radioSearch.Location = New System.Drawing.Point(300, 36)
         Me.radioSearch.Name = "radioSearch"
-        Me.radioSearch.Size = New System.Drawing.Size(142, 21)
+        Me.radioSearch.Size = New System.Drawing.Size(114, 17)
         Me.radioSearch.TabIndex = 11
         Me.radioSearch.Text = "Details (filtered by:)"
         Me.ToolTip1.SetToolTip(Me.radioSearch, "Show details for all labels printed in specified date range.")
@@ -5372,9 +5286,6 @@ Partial Class Form1
         '
         'statsOut
         '
-        Me.statsOut.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.statsOut.BackColor = System.Drawing.Color.AntiqueWhite
         Me.statsOut.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statsOut.Location = New System.Drawing.Point(4, 100)
@@ -5391,7 +5302,7 @@ Partial Class Form1
         Me.radioByLibrary.AutoSize = True
         Me.radioByLibrary.Location = New System.Drawing.Point(140, 36)
         Me.radioByLibrary.Name = "radioByLibrary"
-        Me.radioByLibrary.Size = New System.Drawing.Size(87, 21)
+        Me.radioByLibrary.Size = New System.Drawing.Size(71, 17)
         Me.radioByLibrary.TabIndex = 7
         Me.radioByLibrary.Text = "By Library"
         Me.ToolTip1.SetToolTip(Me.radioByLibrary, "Count labels printed for each library in specified date range.")
@@ -5403,7 +5314,7 @@ Partial Class Form1
         Me.radioByUser.Checked = True
         Me.radioByUser.Location = New System.Drawing.Point(140, 12)
         Me.radioByUser.Name = "radioByUser"
-        Me.radioByUser.Size = New System.Drawing.Size(72, 21)
+        Me.radioByUser.Size = New System.Drawing.Size(62, 17)
         Me.radioByUser.TabIndex = 6
         Me.radioByUser.TabStop = True
         Me.radioByUser.Text = "By User"
@@ -5423,7 +5334,6 @@ Partial Class Form1
         'STL
         '
         Me.STL.FormattingEnabled = True
-        Me.STL.ItemHeight = 17
         Me.STL.Location = New System.Drawing.Point(488, 0)
         Me.STL.Name = "STL"
         Me.STL.Size = New System.Drawing.Size(36, 17)
@@ -5435,7 +5345,7 @@ Partial Class Form1
         Me.Label55.AutoSize = True
         Me.Label55.Location = New System.Drawing.Point(20, 60)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(21, 17)
+        Me.Label55.Size = New System.Drawing.Size(16, 13)
         Me.Label55.TabIndex = 3
         Me.Label55.Text = "to"
         '
@@ -5444,7 +5354,7 @@ Partial Class Form1
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(4, 36)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 17)
+        Me.Label9.Size = New System.Drawing.Size(30, 13)
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "From"
         '
@@ -5454,7 +5364,7 @@ Partial Class Form1
         Me.toScan.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.toScan.Location = New System.Drawing.Point(36, 56)
         Me.toScan.Name = "toScan"
-        Me.toScan.Size = New System.Drawing.Size(92, 25)
+        Me.toScan.Size = New System.Drawing.Size(92, 20)
         Me.toScan.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.toScan, "Select highest date for report.")
         Me.toScan.Value = New Date(2013, 8, 28, 0, 0, 0, 0)
@@ -5464,7 +5374,7 @@ Partial Class Form1
         Me.fromScan.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.fromScan.Location = New System.Drawing.Point(36, 32)
         Me.fromScan.Name = "fromScan"
-        Me.fromScan.Size = New System.Drawing.Size(92, 25)
+        Me.fromScan.Size = New System.Drawing.Size(92, 20)
         Me.fromScan.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.fromScan, "Select earliest date for report.")
         Me.fromScan.Value = New Date(2013, 6, 12, 0, 0, 0, 0)
@@ -5472,7 +5382,7 @@ Partial Class Form1
         'createTemp
         '
         Me.createTemp.AutoSize = True
-        Me.createTemp.Location = New System.Drawing.Point(485, 30)
+        Me.createTemp.Location = New System.Drawing.Point(484, 8)
         Me.createTemp.Name = "createTemp"
         Me.createTemp.Size = New System.Drawing.Size(132, 17)
         Me.createTemp.TabIndex = 31
@@ -5484,7 +5394,7 @@ Partial Class Form1
         'chkRequireUser
         '
         Me.chkRequireUser.AutoSize = True
-        Me.chkRequireUser.Location = New System.Drawing.Point(365, 30)
+        Me.chkRequireUser.Location = New System.Drawing.Point(364, 8)
         Me.chkRequireUser.Name = "chkRequireUser"
         Me.chkRequireUser.Size = New System.Drawing.Size(114, 17)
         Me.chkRequireUser.TabIndex = 46
@@ -5528,9 +5438,7 @@ Partial Class Form1
         '
         'SaveSettingsButn
         '
-        Me.SaveSettingsButn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SaveSettingsButn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SaveSettingsButn.Location = New System.Drawing.Point(768, 478)
+        Me.SaveSettingsButn.Location = New System.Drawing.Point(700, 388)
         Me.SaveSettingsButn.Name = "SaveSettingsButn"
         Me.SaveSettingsButn.Size = New System.Drawing.Size(52, 20)
         Me.SaveSettingsButn.TabIndex = 15
@@ -5540,9 +5448,7 @@ Partial Class Form1
         '
         'LoadSettingsButn
         '
-        Me.LoadSettingsButn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LoadSettingsButn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LoadSettingsButn.Location = New System.Drawing.Point(712, 478)
+        Me.LoadSettingsButn.Location = New System.Drawing.Point(644, 388)
         Me.LoadSettingsButn.Name = "LoadSettingsButn"
         Me.LoadSettingsButn.Size = New System.Drawing.Size(52, 20)
         Me.LoadSettingsButn.TabIndex = 16
@@ -5553,7 +5459,7 @@ Partial Class Form1
         'Label27
         '
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(4, 71)
+        Me.Label27.Location = New System.Drawing.Point(4, 52)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(200, 16)
         Me.Label27.TabIndex = 17
@@ -5606,14 +5512,11 @@ Partial Class Form1
         '
         'CheckForUpdates
         '
-        Me.CheckForUpdates.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckForUpdates.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckForUpdates.Location = New System.Drawing.Point(220, 474)
+        Me.CheckForUpdates.Location = New System.Drawing.Point(220, 384)
         Me.CheckForUpdates.Name = "CheckForUpdates"
-        Me.CheckForUpdates.Size = New System.Drawing.Size(176, 24)
+        Me.CheckForUpdates.Size = New System.Drawing.Size(108, 24)
         Me.CheckForUpdates.TabIndex = 23
-        Me.CheckForUpdates.Text = "Update"
+        Me.CheckForUpdates.Text = "Check for updates"
         Me.ToolTip1.SetToolTip(Me.CheckForUpdates, "Check web for newer software release")
         Me.CheckForUpdates.UseVisualStyleBackColor = True
         '
@@ -5621,11 +5524,23 @@ Partial Class Form1
         '
         Me.ToolTip1.Active = False
         '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType(((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic) _
+                Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(708, 8)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(40, 13)
+        Me.Label47.TabIndex = 35
+        Me.Label47.Text = "About"
+        Me.ToolTip1.SetToolTip(Me.Label47, "Statement of Copyright and authorship, and link to product manual")
+        '
         'usrname
         '
         Me.usrname.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.usrname.ForeColor = System.Drawing.Color.Blue
-        Me.usrname.Location = New System.Drawing.Point(120, 30)
+        Me.usrname.Location = New System.Drawing.Point(120, 6)
         Me.usrname.Name = "usrname"
         Me.usrname.Size = New System.Drawing.Size(88, 13)
         Me.usrname.TabIndex = 38
@@ -5635,7 +5550,7 @@ Partial Class Form1
         '
         Me.lblStation.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblStation.Location = New System.Drawing.Point(0, 28)
+        Me.lblStation.Location = New System.Drawing.Point(0, 4)
         Me.lblStation.Name = "lblStation"
         Me.lblStation.Size = New System.Drawing.Size(84, 16)
         Me.lblStation.TabIndex = 39
@@ -5646,7 +5561,7 @@ Partial Class Form1
         Me.station.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.station.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.station.ForeColor = System.Drawing.Color.Green
-        Me.station.Location = New System.Drawing.Point(269, 30)
+        Me.station.Location = New System.Drawing.Point(268, 8)
         Me.station.Name = "station"
         Me.station.Size = New System.Drawing.Size(92, 14)
         Me.station.TabIndex = 49
@@ -5656,11 +5571,10 @@ Partial Class Form1
         '
         'LabelRepeat
         '
-        Me.LabelRepeat.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LabelRepeat.BackColor = System.Drawing.Color.White
         Me.LabelRepeat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelRepeat.ForeColor = System.Drawing.Color.Black
-        Me.LabelRepeat.Location = New System.Drawing.Point(176, 474)
+        Me.LabelRepeat.Location = New System.Drawing.Point(176, 384)
         Me.LabelRepeat.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.LabelRepeat.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.LabelRepeat.Name = "LabelRepeat"
@@ -5687,6 +5601,19 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.lblXMLWarn, "Warns if an XML field is invalid.  Click the 'XML!' symbol to see which field(s) " &
         "caused the error.")
         Me.lblXMLWarn.Visible = False
+        '
+        'lblToggleAdmin
+        '
+        Me.lblToggleAdmin.AutoSize = True
+        Me.lblToggleAdmin.Font = New System.Drawing.Font("Wingdings 3", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.lblToggleAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lblToggleAdmin.Location = New System.Drawing.Point(196, 20)
+        Me.lblToggleAdmin.Name = "lblToggleAdmin"
+        Me.lblToggleAdmin.Size = New System.Drawing.Size(19, 15)
+        Me.lblToggleAdmin.TabIndex = 54
+        Me.lblToggleAdmin.Tag = ""
+        Me.lblToggleAdmin.Text = "u"
+        Me.ToolTip1.SetToolTip(Me.lblToggleAdmin, "Click to open or close the setup panels")
         '
         'unitCM
         '
@@ -5746,10 +5673,9 @@ Partial Class Form1
         '
         'Label34
         '
-        Me.Label34.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(656, 482)
+        Me.Label34.Location = New System.Drawing.Point(588, 392)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(57, 13)
         Me.Label34.TabIndex = 27
@@ -5783,7 +5709,7 @@ Partial Class Form1
         Me.lblUser.AutoSize = True
         Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUser.ForeColor = System.Drawing.Color.Gray
-        Me.lblUser.Location = New System.Drawing.Point(84, 30)
+        Me.lblUser.Location = New System.Drawing.Point(84, 6)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(37, 13)
         Me.lblUser.TabIndex = 37
@@ -5793,7 +5719,7 @@ Partial Class Form1
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(217, 31)
+        Me.Label10.Location = New System.Drawing.Point(216, 9)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(51, 13)
         Me.Label10.TabIndex = 50
@@ -5802,7 +5728,7 @@ Partial Class Form1
         'tips
         '
         Me.tips.AutoSize = True
-        Me.tips.Location = New System.Drawing.Point(621, 30)
+        Me.tips.Location = New System.Drawing.Point(620, 8)
         Me.tips.Name = "tips"
         Me.tips.Size = New System.Drawing.Size(76, 17)
         Me.tips.TabIndex = 51
@@ -5812,10 +5738,9 @@ Partial Class Form1
         '
         'Label86
         '
-        Me.Label86.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label86.AutoSize = True
         Me.Label86.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label86.Location = New System.Drawing.Point(160, 478)
+        Me.Label86.Location = New System.Drawing.Point(160, 388)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(29, 13)
         Me.Label86.TabIndex = 52
@@ -5827,7 +5752,7 @@ Partial Class Form1
         Me.TextBox24.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox24.ForeColor = System.Drawing.Color.Blue
-        Me.TextBox24.Location = New System.Drawing.Point(4, 91)
+        Me.TextBox24.Location = New System.Drawing.Point(4, 72)
         Me.TextBox24.Multiline = True
         Me.TextBox24.Name = "TextBox24"
         Me.TextBox24.Size = New System.Drawing.Size(208, 44)
@@ -5835,12 +5760,11 @@ Partial Class Form1
         '
         'printProgress
         '
-        Me.printProgress.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.printProgress.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.printProgress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.printProgress.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.printProgress.ForeColor = System.Drawing.Color.Fuchsia
-        Me.printProgress.Location = New System.Drawing.Point(16, 454)
+        Me.printProgress.Location = New System.Drawing.Point(16, 364)
         Me.printProgress.Name = "printProgress"
         Me.printProgress.Size = New System.Drawing.Size(132, 17)
         Me.printProgress.TabIndex = 35
@@ -5894,12 +5818,11 @@ Partial Class Form1
         '
         'Panel18
         '
-        Me.Panel18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel18.BackColor = System.Drawing.Color.White
         Me.Panel18.Controls.Add(Me.unitCM)
         Me.Panel18.Controls.Add(Me.unitINCH)
         Me.Panel18.Controls.Add(Me.Label116)
-        Me.Panel18.Location = New System.Drawing.Point(396, 474)
+        Me.Panel18.Location = New System.Drawing.Point(328, 384)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(124, 28)
         Me.Panel18.TabIndex = 60
@@ -5916,12 +5839,11 @@ Partial Class Form1
         '
         'Panel19
         '
-        Me.Panel19.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel19.Controls.Add(Me.Label124)
         Me.Panel19.Controls.Add(Me.decimalCOMMA)
         Me.Panel19.Controls.Add(Me.decimalDOT)
         Me.Panel19.Controls.Add(Me.Label123)
-        Me.Panel19.Location = New System.Drawing.Point(520, 474)
+        Me.Panel19.Location = New System.Drawing.Point(452, 384)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(136, 28)
         Me.Panel19.TabIndex = 61
@@ -5953,7 +5875,7 @@ Partial Class Form1
         Me.xboxPanel.Controls.Add(Me.Label89)
         Me.xboxPanel.Controls.Add(Me.closeXbox)
         Me.xboxPanel.Controls.Add(Me.XBOX)
-        Me.xboxPanel.Location = New System.Drawing.Point(0, 76)
+        Me.xboxPanel.Location = New System.Drawing.Point(0, 52)
         Me.xboxPanel.Name = "xboxPanel"
         Me.xboxPanel.Size = New System.Drawing.Size(44, 44)
         Me.xboxPanel.TabIndex = 59
@@ -6022,53 +5944,13 @@ Partial Class Form1
         Me.accessType.TabIndex = 63
         Me.accessType.Text = "-"
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SpineOMaticToolStripMenuItem, Me.AboutToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(825, 24)
-        Me.MenuStrip1.TabIndex = 64
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'lblToggleAdmin
-        '
-        Me.lblToggleAdmin.AutoSize = True
-        Me.lblToggleAdmin.Font = New System.Drawing.Font("Wingdings 3", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.lblToggleAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.lblToggleAdmin.Location = New System.Drawing.Point(196, 28)
-        Me.lblToggleAdmin.Name = "lblToggleAdmin"
-        Me.lblToggleAdmin.Size = New System.Drawing.Size(19, 15)
-        Me.lblToggleAdmin.TabIndex = 54
-        Me.lblToggleAdmin.Tag = ""
-        Me.lblToggleAdmin.Text = "u"
-        Me.ToolTip1.SetToolTip(Me.lblToggleAdmin, "Click to open or close the setup panels")
-        '
-        'SpineOMaticToolStripMenuItem
-        '
-        Me.SpineOMaticToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuitToolStripMenuItem})
-        Me.SpineOMaticToolStripMenuItem.Name = "SpineOMaticToolStripMenuItem"
-        Me.SpineOMaticToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
-        Me.SpineOMaticToolStripMenuItem.Text = "SpineOMatic"
-        '
-        'QuitToolStripMenuItem
-        '
-        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.QuitToolStripMenuItem.Text = "Quit"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(825, 504)
+        Me.ClientSize = New System.Drawing.Size(757, 414)
         Me.Controls.Add(Me.xboxPanel)
         Me.Controls.Add(Me.Panel19)
         Me.Controls.Add(Me.Panel18)
@@ -6083,6 +5965,7 @@ Partial Class Form1
         Me.Controls.Add(Me.usrname)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.HistoryList)
+        Me.Controls.Add(Me.Label47)
         Me.Controls.Add(Me.createTemp)
         Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.CheckForUpdates)
@@ -6104,13 +5987,10 @@ Partial Class Form1
         Me.Controls.Add(Me.Label86)
         Me.Controls.Add(Me.holdingsBy)
         Me.Controls.Add(Me.accessType)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(773, 515)
         Me.Name = "Form1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SpineOMatic"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -6208,8 +6088,6 @@ Partial Class Form1
         Me.Panel19.PerformLayout()
         Me.xboxPanel.ResumeLayout(False)
         Me.xboxPanel.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -6322,6 +6200,7 @@ Partial Class Form1
     Friend WithEvents batchEntries As System.Windows.Forms.Label
     Friend WithEvents Label43 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents btnBCFontDialog As System.Windows.Forms.Button
     Friend WithEvents inBCFontWeight As System.Windows.Forms.CheckBox
@@ -6497,6 +6376,7 @@ Partial Class Form1
     Friend WithEvents Label87 As System.Windows.Forms.Label
     Friend WithEvents chkXMLWarning As System.Windows.Forms.CheckBox
     Friend WithEvents lblXMLWarn As System.Windows.Forms.Label
+    Friend WithEvents lblToggleAdmin As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents wrapWidth As System.Windows.Forms.TextBox
     Friend WithEvents flagWrapWidth As System.Windows.Forms.TextBox
@@ -6672,9 +6552,5 @@ Partial Class Form1
     Friend WithEvents xmlShell As System.Windows.Forms.TextBox
     Friend WithEvents accessType As System.Windows.Forms.Label
     Friend WithEvents dontConvert As System.Windows.Forms.CheckBox
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents lblToggleAdmin As Label
-    Friend WithEvents SpineOMaticToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+
 End Class

@@ -120,24 +120,6 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>597, 17</value>
   </metadata>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>597, 17</value>
-  </metadata>
-  <data name="xmlShell.Text" xml:space="preserve">
-    <value>&lt;?xml version="1.0" ?&gt;
-&lt;printout&gt;
-&lt;result&gt;
-&lt;error&gt; &lt;/error&gt; &lt;/result&gt;
-&lt;form-name&gt;Default&lt;/form-name&gt;
-&lt;form-language&gt;???&lt;/form-language&gt;
-&lt;form-format&gt;??&lt;/form-format&gt;
-&lt;section-01&gt;
-&lt;physical_item_display_for_printing&gt;
-**XMLBODY**
-&lt;/physical_item_display_for_printing&gt;
-&lt;/section-01&gt;
-&lt;/printout&gt;</value>
-  </data>
   <data name="FTPHelp.Text" xml:space="preserve">
     <value>SpineOMatic logs on to the printer's FTP server using the IP address, Login ID
 and Password provided.  Each vertical line of the spine label is given a 
@@ -158,14 +140,26 @@ Commands" at the point indicated, and the block is then sent to the printer.</va
  *    suppress if field is blank,
        or if it has value(s):</value>
   </data>
+  <data name="xmlShell.Text" xml:space="preserve">
+    <value>&lt;?xml version="1.0" ?&gt;
+&lt;printout&gt;
+&lt;result&gt;
+&lt;error&gt; &lt;/error&gt; &lt;/result&gt;
+&lt;form-name&gt;Default&lt;/form-name&gt;
+&lt;form-language&gt;???&lt;/form-language&gt;
+&lt;form-format&gt;??&lt;/form-format&gt;
+&lt;section-01&gt;
+&lt;physical_item_display_for_printing&gt;
+**XMLBODY**
+&lt;/physical_item_display_for_printing&gt;
+&lt;/section-01&gt;
+&lt;/printout&gt;</value>
+  </data>
   <metadata name="PrintDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="FileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>157, 17</value>
-  </metadata>
-  <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>318, 56</value>
   </metadata>
   <metadata name="FontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 17</value>
